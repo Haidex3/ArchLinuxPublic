@@ -1,0 +1,418 @@
+@-moz-document url("about:home"), url("about:newtab") {
+    :root {
+        --wallpaper-dark1: url("images/dark1.png");
+        --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
+        --tx-dark1: #ccddef;
+    }
+
+    /* accent color */
+    :root {
+    --uc-browser-color:      rgb(47, 47, 47);
+    --uc-text:               rgb(237, 221, 170);
+    --uc-layered-background: rgb(40, 40, 45);
+    --uc-navbar-background:  var(--toolbar-bgcolor);
+    --uc-urlbar-background:  rgba(40, 40, 45);
+    --uc-findbar-background: var(--uc-layered-background);
+    --uc-sidebar-background: var(--uc-layered-background);
+    --uc-tabsbar-background: var(--uc-browser-color);
+    --uc-tab-background:     transparent;
+    --uc-tab-selected:       rgb(62, 55, 55);
+    --uc-tab-selected-text:  var(--uc-accent-color-4);
+    --uc-button-selected:    rgb(72, 65, 65);
+    --uc-button-red:         color-mix(in srgb, #f54e4e 40%, var(--uc-accent-color-4));
+    --uc-context-menu:       var(--uc-layered-background);
+    --uc-panel-background:   rgb(37, 37, 39);
+    --uc-panel-border:       rgba(27, 25, 35, 1);
+    --uc-panel-border-2:     rgba(70, 70, 80, 0.2);
+    --uc-accent-color-1:     rgb(237, 221, 170);
+    --uc-accent-color-2:     rgb(237, 221, 170);
+    --uc-accent-color-3:     rgb(237, 221, 170);
+    --uc-accent-color-4:     rgb(228, 127, 45);
+    --uc-accent-color-5:     rgb(214, 58, 62);
+    --uc-accent-color-6:     rgb(228, 127, 45);
+    --uc-transparent:        rgba(0,0,0,0);
+    --uc-box-shadow:         0.15rem 0.4rem 0.2rem -0.1rem rgba(0,0,0,0.3);
+    --uc-box-shadow-panel:   0.15rem 0.4rem 0.2rem -0.1rem rgba(25,25,25,0.4);
+    --uc-button-border-radius: 10px;
+    --uc-tab-border-radius: 8px;
+    }
+    * {
+        --tr-hov-col: color-mix(in srgb, var(--tr-col) 80%, var(--newtab-text-primary-color));
+        --newtab-background-color-secondary: color-mix(
+            in srgb,
+            var(--newtab-background-color) 90%,
+            var(--newtab-text-primary-color)
+        ) !important;
+        --newtab-contextual-text-primary-color: var(--newtab-text-primary-color) !important;
+        --newtab-wordmark-color: var(--newtab-text-primary-color) !important;
+        --newtab-button-text: var(--newtab-text-primary-color) !important;
+        --color-accent-primary-active: var(--newtab-text-primary-color) !important;
+        --icon-color: var(--newtab-text-primary-color) !important;
+        --background-color-box: var(--tr-col) !important;
+    }
+
+    /* Set dark1 theme as default */
+    body, #dark-sky, #photographs, #photographs[style*="e94b1e49-c518-40d6-98e3-dffab6cc370d.avif"] {
+        --tr-col: var(--tr-dark1) !important;
+        --newtab-text-primary-color: var(--tx-dark1) !important;
+    }
+
+    body {
+        background-color: color-mix(in srgb, var(--newtab-background-color, #2b2a33) 30%, transparent) !important;
+        width: 100% !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+        background-image: var(--wallpaper-dark1) !important;
+    }
+
+    body:not([class*="Wallpaper"])::before {
+        content: "";
+        position: absolute;
+        height: 130vh;
+        width: auto;
+        aspect-ratio: 1/1 !important;
+        transform: translate(-50%, -50%);
+        top: 100%;
+        left: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 5% !important;
+        background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;}</style><path class="st0" d="M16,22.2c3.4,0,6.2-2.8,6.2-6.2c0-3.4-2.8-6.2-6.2-6.2c-3.4,0-6.2,2.8-6.2,6.2C9.8,19.4,12.6,22.2,16,22.2z M20.9,16c0,2.7-2.2,4.9-4.9,4.9s-4.9-2.2-4.9-4.9s2.2-4.9,4.9-4.9S20.9,13.3,20.9,16z"/><path class="st0" d="M26.7,16c0,5.9-4.8,10.7-10.7,10.7S5.3,21.9,5.3,16S10.1,5.3,16,5.3S26.7,10.1,26.7,16z M16,24.6c4.8,0,8.6-3.9,8.6-8.6S20.8,7.4,16,7.4S7.4,11.2,7.4,16S11.2,24.6,16,24.6z"/><path class="st0" d="M32,16c0,8.8-7.2,16-16,16S0,24.8,0,16S7.2,0,16,0S32,7.2,32,16z M16,29.1c7.3,0,13.1-5.9,13.1-13.1S23.3,2.9,16,2.9S2.9,8.7,2.9,16S8.7,29.1,16,29.1z"/></svg>');
+    }
+
+    /* rounded corners */
+    .top-site-button,
+    .context-menu button,
+    .close-button,
+    .home-section .section .selector {
+        border-radius: var(--rounding) !important;
+    }
+
+    .top-site-outer,
+    .top-site-inner,
+    .context-menu,
+    .icon-settings,
+    .weatherCard {
+        border-radius: var(--big-rounding) !important;
+    }
+
+    /* pinned links */
+    .top-site-button {
+        overflow: clip;
+    }
+
+    .tile,
+    .top-site-icon {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .top-site-button,
+    .customize-menu {
+        background-color: var(--tr-col) !important;
+        backdrop-filter: blur(var(--blur-radius));
+    }
+
+    .title {
+        background-color: color-mix(in srgb, var(--tr-col) 90%, var(--newtab-text-primary-color));
+        & > span {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+
+    .top-site-outer:is(.active, :focus, :hover) {
+        background: var(--tr-hov-col) !important;
+    }
+
+    .top-site-outer,
+    .top-site-inner {
+        & > a {
+            padding: 0 !important;
+        }
+        padding: 5px;
+    }
+
+    .top-site-outer:not(:hover) .icon-pin-small {
+        display: none !important;
+    }
+
+    .tile {
+        outline: none !important;
+    }
+
+    .context-menu-item {
+        padding-inline: 5px !important;
+        padding-block: 1px !important;
+    }
+
+    /* search box */
+    .search-handoff-button {
+        border-radius: 100px !important;
+        backdrop-filter: blur(var(--blur-radius));
+        background-color: var(--tr-col) !important;
+    }
+
+    /* height overflow */
+    @media (height > 700px) {
+        body:not(.inline-onboarding) .fixed-search .search-wrapper {
+            background-color: var(--tr-col) !important;
+            backdrop-filter: blur(var(--blur-radius));
+        }
+        .logo-and-wordmark {
+            display: flex !important;
+        }
+    }
+
+    @media (height <= 700px) {
+        .search-wrapper {
+            padding: 20px 0 30px !important;
+        }
+        .outer-wrapper > main {
+            margin-top: 0px !important;
+        }
+    }
+
+    /* margin to logo when only search is enabled */
+    .only-search .logo-and-wordmark {
+        margin-top: 20px !important;
+    }
+
+    /* central box */
+    .outer-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    main {
+        margin: 0 !important;
+        height: 50%;
+        background-color: var(--tr-col);
+        border-radius: var(--giant-rounding);
+    }
+
+    /* logo */
+    .logo {
+        width: 100px !important;
+        height: 100px !important;
+        background: var(--newtab-text-primary-color) !important;
+        mask-image: url('data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: default;"><path fill-rule="evenodd" clip-rule="evenodd" d="M32 44.3077C38.7974 44.3077 44.3077 38.7974 44.3077 32C44.3077 25.2027 38.7974 19.6923 32 19.6923C25.2027 19.6923 19.6923 25.2027 19.6923 32C19.6923 38.7974 25.2027 44.3077 32 44.3077ZM41.8462 32C41.8462 37.4379 37.4379 41.8462 32 41.8462C26.5621 41.8462 22.1538 37.4379 22.1538 32C22.1538 26.5621 26.5621 22.1538 32 22.1538C37.4379 22.1538 41.8462 26.5621 41.8462 32Z" fill="context-fill"/><path fill-rule="evenodd" clip-rule="evenodd" d="M53.3333 32C53.3333 43.7821 43.7821 53.3333 32 53.3333C20.2179 53.3333 10.6667 43.7821 10.6667 32C10.6667 20.2179 20.2179 10.6667 32 10.6667C43.7821 10.6667 53.3333 20.2179 53.3333 32ZM32 49.2308C41.5163 49.2308 49.2308 41.5163 49.2308 32C49.2308 22.4837 41.5163 14.7692 32 14.7692C22.4837 14.7692 14.7692 22.4837 14.7692 32C14.7692 41.5163 22.4837 49.2308 32 49.2308Z" fill="context-fill"/><path fill-rule="evenodd" clip-rule="evenodd" d="M64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32ZM32 58.2564C46.501 58.2564 58.2564 46.501 58.2564 32C58.2564 17.499 46.501 5.74359 32 5.74359C17.499 5.74359 5.74359 17.499 5.74359 32C5.74359 46.501 17.499 58.2564 32 58.2564Z" fill="context-fill"/></svg>') !important;
+        mask-size: 100% !important;
+        mask-repeat: no-repeat !important;
+    }
+
+    .wallpaper-input:hover {
+        filter: brightness(75%) !important;
+        outline-color: inherit !important;
+    }
+
+    /* wallpaper */
+    .wallpaper-attribution {
+        display: none !important;
+    }
+
+    /* settings */
+    .icon-settings:hover {
+        background-color: var(--tr-hov-col) !important;
+    }
+    .close-button-wrapper {
+        background-color: transparent !important;
+    }
+
+    .wallpaper-list {
+        background-color: transparent !important;
+        backdrop-filter: blur(var(--blur-radius)) !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        left: 0 !important;
+        right: 0 !important;
+
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    .home-section .section .selector {
+        background-color: var(--tr-col) !important;
+        &:hover {
+            background-color: var(--tr-hov-col) !important;
+        }
+    }
+
+    .toggle-button {
+        border-color: var(--toggle-border-color) !important;
+        &[aria-pressed="true"]:not(:hover) {
+            background: color-mix(in srgb, var(--toggle-background-color-pressed-hover), transparent) !important;
+        }
+    }
+
+    /* weather */
+    .weatherInfoLink:hover,
+    .weatherButtonContextMenuWrapper:hover {
+        background-color: var(--tr-hov-col) !important;
+    }
+
+    .weatherCard:not(:hover) .weatherButtonContextMenuWrapper {
+        opacity: 0;
+    }
+    .weatherInfoLink {
+        border-radius: 0px !important;
+    }
+    .weatherButtonContextMenuWrapper::after {
+        display: none !important;
+    }
+}
+
+@-moz-document url("about:privatebrowsing") {
+    .search-handoff-button {
+        border-radius: 100px !important;
+    }
+    .info {
+        border-radius: var(--big-rounding) !important;
+    }
+}
+
+@-moz-document url-prefix("http") {
+
+  /* ============================= */
+  /* 🎨 VARIABLES BASE */
+  /* ============================= */
+
+  :root {
+    color-scheme: dark !important;
+
+    --auto-bg-dark:  #181a20;
+    --auto-bg-dim:   #20232d;
+    --auto-border:   #2a2d3a;
+
+    --auto-text:     #e6e6e6;
+    --auto-link:     #7aa2f7;
+  }
+
+  /* ============================= */
+  /* 🌑 BASE */
+  /* ============================= */
+
+  html {
+    background-color: var(--auto-bg-dark) !important;
+  }
+
+  body {
+    background-color: transparent !important;
+  }
+
+  /* ============================= */
+  /* 🚫 MEDIA — JAMÁS TOCAR */
+  /* ============================= */
+
+  video,
+  video *,
+  img,
+  picture,
+  canvas,
+  svg,
+  iframe,
+  embed,
+  object {
+    background: transparent !important;
+    filter: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+  }
+
+  /* ============================= */
+  /* 📦 CONTRASTE AUTOMÁTICO */
+  /* ============================= */
+
+  main,
+  article,
+  section,
+  aside,
+  nav,
+  header,
+  footer,
+  body > div {
+    /* SOLO oscurece si el fondo era claro */
+    background-color: color-mix(
+      in srgb,
+      var(--auto-bg-dim) 85%,
+      transparent
+    ) !important;
+
+    color: var(--auto-text) !important;
+  }
+
+  /* ============================= */
+  /* 🪟 OVERLAYS / MODALES */
+  /* ============================= */
+
+  [role="dialog"],
+  [role="menu"],
+  [role="tooltip"],
+  [aria-modal="true"],
+  .modal,
+  .dialog,
+  .dropdown,
+  .popover,
+  .context-menu,
+  .menu,
+  .popup,
+  .toast,
+  .tooltip {
+    background-color: color-mix(
+      in srgb,
+      var(--auto-bg-dark) 92%,
+      transparent
+    ) !important;
+
+    color: var(--auto-text) !important;
+    border: 1px solid var(--auto-border) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,.55) !important;
+  }
+
+  /* ============================= */
+  /* 🔗 ENLACES */
+  /* ============================= */
+
+  a {
+    color: var(--auto-link) !important;
+  }
+
+  /* ============================= */
+  /* ⌨️ FORMULARIOS */
+  /* ============================= */
+
+  input,
+  textarea,
+  select,
+  button {
+    background-color: color-mix(
+      in srgb,
+      var(--auto-bg-dim) 90%,
+      transparent
+    ) !important;
+
+    color: inherit !important;
+    border: 1px solid var(--auto-border) !important;
+  }
+
+  /* ============================= */
+  /* 🧠 TEXTO — SOLO HEREDA */
+  /* ============================= */
+
+  p,
+  span,
+  li,
+  label,
+  small,
+  strong,
+  em,
+  b,
+  i,
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit !important;
+  }
+
+}

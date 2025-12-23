@@ -17,18 +17,19 @@ Item {
     
     // Map as JavaScript object that defines custom display names for workspaces
     property var workspaceNames: {
-        "1": "イ",
-        "2": "ロ",
-        "3": "ハ",
-        "4": "ニ",
-        "5": "ホ",
-        "6": "ヘ",
-        "7": "ト",
-        "8": "チ",
-        "9": "リ",
-        "10": "ヌ",
-        "11": "イ"
+        "1": "➊",
+        "2": "➋",
+        "3": "➌",
+        "4": "➍",
+        "5": "➎",
+        "6": "➏",
+        "7": "➐",
+        "8": "➑",
+        "9": "➒",
+        "10": "➓",
+        "11": "⓫"
     }
+
     
     // Show workspaces
     RowLayout {

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Adaptive Dark Mode (Local)",
+  "version": "1.0",
+  "description": "Dark mode por contraste real (local, sin recolección de datos)",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": ["<all_urls>"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "adaptive-dark-contrast@local",
+      "strict_min_version": "102.0",
+
+      "data_collection_permissions": {
+        "required": ["none"],
+        "collects_user_data": false,
+        "collects_technical_data": false
+      }
+    }
+  }
+}
