@@ -1,128 +1,71 @@
 @-moz-document url("about:home"), url("about:newtab") {
-
     :root {
         --wallpaper-dark1: url("images/dark1.png");
         --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
         --tx-dark1: #ccddef;
-
-        --uc-browser-color: rgb(47, 47, 47);
-        --uc-text: rgb(237, 221, 170);
-        --uc-layered-background: rgb(40, 40, 45);
-        --uc-navbar-background: var(--toolbar-bgcolor);
-        --uc-urlbar-background: rgba(40, 40, 45);
-        --uc-findbar-background: var(--uc-layered-background);
-        --uc-sidebar-background: var(--uc-layered-background);
-        --uc-tabsbar-background: var(--uc-browser-color);
-        --uc-tab-background: transparent;
-        --uc-tab-selected: rgb(62, 55, 55);
-        --uc-tab-selected-text: var(--uc-accent-color-4);
-        --uc-button-selected: rgb(72, 65, 65);
-        --uc-button-red: color-mix(in srgb, #f54e4e 40%, var(--uc-accent-color-4));
-        --uc-context-menu: var(--uc-layered-background);
-        --uc-panel-background: rgb(37, 37, 39);
-        --uc-panel-border: rgba(27, 25, 35, 1);
-        --uc-panel-border-2: rgba(70, 70, 80, 0.2);
-
-        --uc-accent-color-1: rgb(237, 221, 170);
-        --uc-accent-color-2: rgb(237, 221, 170);
-        --uc-accent-color-3: rgb(237, 221, 170);
-        --uc-accent-color-4: rgb(228, 127, 45);
-        --uc-accent-color-5: rgb(214, 58, 62);
-        --uc-accent-color-6: rgb(228, 127, 45);
-
-        --uc-transparent: rgba(0,0,0,0);
-        --uc-box-shadow: 0.15rem 0.4rem 0.2rem -0.1rem rgba(0,0,0,0.3);
-        --uc-box-shadow-panel: 0.15rem 0.4rem 0.2rem -0.1rem rgba(25,25,25,0.4);
-
-        --uc-button-border-radius: 10px;
-        --uc-tab-border-radius: 8px;
+        --uc-bg: rgb(40, 40, 45);
+        --uc-accent: rgb(237, 221, 170);
+        --uc-accent-orange: rgb(228, 127, 45);
     }
 
     * {
-        --tr-hov-col: color-mix(in srgb, var(--tr-col) 80%, var(--newtab-text-primary-color));
-        --newtab-background-color-secondary: color-mix(
-            in srgb,
-            var(--newtab-background-color) 90%,
-            var(--newtab-text-primary-color)
-        ) !important;
-        --newtab-contextual-text-primary-color: var(--newtab-text-primary-color) !important;
-        --newtab-wordmark-color: var(--newtab-text-primary-color) !important;
-        --newtab-button-text: var(--newtab-text-primary-color) !important;
-        --color-accent-primary-active: var(--newtab-text-primary-color) !important;
-        --icon-color: var(--newtab-text-primary-color) !important;
+        --tr-hov-col: color-mix(in srgb, var(--tr-col) 80%, var(--tx-dark1));
+        --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-background-color) 90%, var(--tx-dark1)) !important;
+        --newtab-contextual-text-primary-color: var(--tx-dark1) !important;
+        --newtab-wordmark-color: var(--tx-dark1) !important;
         --background-color-box: var(--tr-col) !important;
     }
 
-    body,
-    #dark-sky,
-    #photographs,
-    #photographs[style*="e94b1e49-c518-40d6-98e3-dffab6cc370d.avif"] {
+    body {
         --tr-col: var(--tr-dark1) !important;
         --newtab-text-primary-color: var(--tx-dark1) !important;
-    }
-
-    body {
-        background-color: color-mix(in srgb, var(--newtab-background-color, #2b2a33) 30%, transparent) !important;
+        background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-dark1) !important;
         width: 100% !important;
         height: 100vh !important;
         overflow: hidden !important;
-        background-image: var(--wallpaper-dark1) !important;
     }
 
     body:not([class*="Wallpaper"])::before {
         content: "";
         position: absolute;
         height: 130vh;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 1;
         top: 100%;
         left: 100%;
         transform: translate(-50%, -50%);
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 5% !important;
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><style>.st0{fill:%23fff;fill-rule:evenodd;clip-rule:evenodd}</style><path class="st0" d="M16 22.2a6.2 6.2 0 1 0 0-12.4 6.2 6.2 0 0 0 0 12.4z"/><path class="st0" d="M26.7 16a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0z"/><path class="st0" d="M32 16A16 16 0 1 1 0 16a16 16 0 0 1 32 0z"/></svg>');
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23fff" fill-rule="evenodd" d="M16 22.2a6.2 6.2 0 1 0 0-12.4 6.2 6.2 0 0 0 0 12.4zm10.7-6.2a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0zm5.3 0A16 16 0 1 1 0 16a16 16 0 0 1 32 0z"/></svg>') center no-repeat;
+        opacity: 0.05 !important;
     }
 
     .top-site-button,
-    .context-menu button,
-    .close-button,
-    .home-section .section .selector {
-        border-radius: var(--rounding) !important;
+    .search-handoff-button {
+        background-color: var(--tr-col) !important;
+        backdrop-filter: blur(var(--blur-radius));
+        border-radius: var(--rounding, 8px) !important;
     }
 
     .top-site-outer,
-    .top-site-inner,
-    .context-menu,
     .icon-settings,
     .weatherCard {
-        border-radius: var(--big-rounding) !important;
+        border-radius: var(--big-rounding, 12px) !important;
+    }
+
+    .top-site-outer:is(.active, :focus, :hover),
+    .icon-settings:hover {
+        background-color: var(--tr-hov-col) !important;
     }
 
     .tile,
     .top-site-icon {
-        background-color: transparent !important;
+        background: transparent !important;
         box-shadow: none !important;
         border: none !important;
-    }
-
-    .top-site-button,
-    .customize-menu,
-    .search-handoff-button {
-        background-color: var(--tr-col) !important;
-        backdrop-filter: blur(var(--blur-radius));
-    }
-
-    .top-site-outer:is(.active, :focus, :hover),
-    .icon-settings:hover,
-    .weatherInfoLink:hover,
-    .weatherButtonContextMenuWrapper:hover {
-        background-color: var(--tr-hov-col) !important;
     }
 
     main {
         height: 50%;
         background-color: var(--tr-col);
-        border-radius: var(--giant-rounding);
+        border-radius: var(--giant-rounding, 20px);
     }
 
     .wallpaper-attribution {
@@ -130,261 +73,143 @@
     }
 }
 
-@-moz-document url("about:privatebrowsing") {
-    .search-handoff-button,
-    .info {
-        border-radius: var(--big-rounding) !important;
-    }
-}
-
-
 @-moz-document url-prefix("http") {
-
-    /* Variables base de modo oscuro */
     :root {
         color-scheme: dark !important;
         --auto-bg-dark: #21232c;
-        --auto-bg-dim:  #0e1014;
-        --auto-border:  #2a2d3a;
-        --auto-text:    #e6e6e6;
+        --auto-bg-dim: #0e1014;
+        --auto-border: #2a2d3a;
+        --auto-text: #e6e6e6;
     }
 
-    /* Fondo real del documento */
-    html {
-        background-color: var(--auto-bg-dark) !important;
-    }
+    html { background-color: var(--auto-bg-dark) !important; }
+    body { background: transparent !important; }
 
-    /* Evita doble fondo */
-    body {
-        background-color: transparent !important;
-    }
-
-    /* Multimedia sin alterar */
-    video,
-    img,
-    picture,
-    canvas,
-    svg,
-    iframe,
-    embed,
-    object {
+    video, img, picture, canvas, svg, iframe, embed, object {
         background: transparent !important;
         filter: none !important;
-        box-shadow: none !important;
     }
 
-    /* Layouts comunes */
-    main,
-    article,
-    section,
-    aside,
-    nav,
-    header,
-    footer,
-    body > div {
+    main, article, section, aside, nav, header, footer, body > div,
+    [data-region], [role="application"], [role="main"],
+    [class*="app"], [class*="drawer"], [class*="view-"],
+    [class*="panel"], [class*="overview"],
+    .card, .section, [class*="section"] {
         background-color: color-mix(in srgb, var(--auto-bg-dim) 85%, transparent) !important;
         color: var(--auto-text) !important;
+        border-color: var(--auto-border) !important;
     }
 
-    /* Contenedores principales de apps */
-    [data-region],
-    [role="application"],
-    [role="main"],
-    [class*="app"],
-    [class*="drawer"],
-    [class*="view-"],
-    [class*="panel"],
-    [class*="overview"] {
-        background-color: var(--auto-bg-dark) !important;
-        color: var(--auto-text) !important;
-    }
-
-    /* Modales y overlays */
-    [role="dialog"],
-    [role="menu"],
-    [aria-modal="true"],
-    .modal,
-    .dialog,
-    .dropdown,
-    .popover,
-    .menu,
-    .popup,
-    .toast,
-    .tooltip {
+    [role="dialog"], [role="menu"], [aria-modal="true"],
+    .modal, .dialog, .dropdown, .popover, .menu, .popup {
         background-color: color-mix(in srgb, var(--auto-bg-dark) 92%, transparent) !important;
         color: var(--auto-text) !important;
         box-shadow: 0 10px 40px rgba(0,0,0,.55) !important;
     }
 
-    /* Formularios */
-    input,
-    textarea,
-    select {
+    input, textarea, select {
         background-color: color-mix(in srgb, var(--auto-bg-dim) 90%, transparent) !important;
         color: inherit !important;
     }
 
-    /* Texto hereda color */
-    p,
-    span,
-    li,
-    label,
-    small,
-    strong,
-    em,
-    b,
-    i,
-    h1, h2, h3, h4, h5, h6 {
-        color: inherit !important;
-    }
+    hr, fieldset { border-color: var(--auto-border) !important; }
+    * { outline-color: var(--auto-border) !important; }
 
-    /* Bordes y separadores */
-    hr {
-        border-color: var(--auto-border) !important;
-        background-color: var(--auto-border) !important;
-    }
-
-    fieldset {
-        border-color: var(--auto-border) !important;
-    }
-
-    legend {
-        color: var(--auto-text) !important;
-    }
-
-    * {
-        outline-color: var(--auto-border) !important;
-    }
-
-    /* Tablas */
     table {
         background-color: var(--auto-bg-dim) !important;
         color: var(--auto-text) !important;
         border-color: var(--auto-border) !important;
     }
 
-    thead,
-    tbody,
-    tfoot,
-    tr {
-        background-color: transparent !important;
-    }
-
-    th,
-    td {
+    th, td {
         background-color: color-mix(in srgb, var(--auto-bg-dark) 85%, transparent) !important;
         border-color: var(--auto-border) !important;
+    }
+
+    pre, kbd, samp {
+        background-color: color-mix(in srgb, var(--auto-bg-dark) 90%, transparent) !important;
+        color: #cdd6f4 !important;
+    }
+
+    [class*="poly-card"],
+    [class*="card-grid"],
+    [class*="dynamic-access-card"],
+    [class*="andes-card"],
+    [class*="ui-card"] {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] :where(span, p, div):not(a > *),
+    [class*="card-grid"] :where(span, p, div):not(a > *),
+    [class*="dynamic-access-card"] :where(span, p, div) {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] a,
+    [class*="card-grid"] a {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] a:is(:hover, :focus, :active),
+    [class*="card-grid"] a:is(:hover, :focus, :active) {
+        color: revert !important;
+    }
+
+    [class*="poly-card"] :where(svg, path),
+    [class*="card-grid"] :where(svg, path) {
+        fill: currentColor !important;
+    }
+
+    [class*="nav-"],
+    [class*="header"],
+    [class*="menu"],
+    [class*="user-menu"],
+    [class*="user-menu"] :where(li, ul) {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="nav-"] a:is(:hover, :focus, :active),
+    [class*="user-menu"] a:is(:hover, :focus, :active) {
+        color: revert !important;
+    }
+
+    .user-menu-guest-item > a {
         color: inherit !important;
     }
 
-    /* Código y bloques técnicos */
-    pre,
-    code,
-    kbd,
-    samp {
-        background-color: color-mix(in srgb, var(--auto-bg-dark) 90%, transparent) !important;
-        color: #cdd6f4 !important;
+    .nav-search-input,
+    [class*="nav-search"] input {
+        color: var(--auto-text) !important;
+        background-color: var(--auto-bg-dark) !important;
         border-color: var(--auto-border) !important;
     }
 
-    /* Cards y secciones internas */
-    .card,
-    .section,
-    [class*="section"] {
-        background-color: color-mix(in srgb, var(--auto-bg-dim) 92%, transparent) !important;
-        border-color: var(--auto-border) !important;
+    .nav-search-input::placeholder,
+    [class*="nav-search"] input::placeholder {
+        color: color-mix(in srgb, var(--auto-text) 65%, transparent) !important;
     }
 
-    /* Neutraliza fondos blancos forzados */
-    .bg-white,
-    [class*="bg-white"] {
-        background-color: var(--auto-bg-dark) !important;
-    }
-
-    /* Vistas dinámicas que se muestran luego */
-    [aria-hidden="false"],
-    .hidden:not([aria-hidden="true"]) {
-        background-color: var(--auto-bg-dark) !important;
-    }
-
-    /* Scrollbars internas (Firefox) */
-    [class*="view"],
-    [class*="container"] {
-        scrollbar-width: thin;
-        scrollbar-color: var(--auto-border) var(--auto-bg-dark);
-    }
-
-    /* Tree / navigation: fondo real del contenido */
-    .tree_item,
-    .tree-item,
-    .navigation_node,
-    .navigation-node,
-    [role="treeitem"] > p,
-    [role="treeitem"] > a,
-    [role="treeitem"] > div {
-        display: block !important;
-        padding: 0.4em 0.6em !important;
-        background-color: color-mix(in srgb, var(--auto-bg-dim) 92%, transparent) !important;
-        color: var(--auto-text) !important;
-        border-radius: 6px;
-    }
-
-    /* Estados de tree */
-    [role="treeitem"][aria-selected="true"] > p,
-    [role="treeitem"].current > p,
-    [role="treeitem"]:hover > p {
-        background-color: color-mix(in srgb, var(--auto-bg-dark) 95%, transparent) !important;
-    }
-
-    /* Tree: contenedor principal (fondo + padding) */
-    [role="tree"],
-    ul.tree,
-    ul.list,
-    ul.block.tree,
-    ul[class*="tree"] {
-        display: block !important;
-        padding: 0.4em !important;
-        background-color: var(--auto-bg-dim) !important;
-        color: var(--auto-text) !important;
-        box-sizing: border-box;
-    }
-
-    /* Navigation block: card-body real (fondo + padding) */
-    .block_navigation.card .card-body,
-    .block_navigation.block .card-body,
-    [role="navigation"].block.card .card-body {
-        background-color: var(--auto-bg-dim) !important;
-    }
-
-
-    /* Tree hereda fondo del card-body */
-    .block_navigation .card-body > [role="tree"],
-    .block_navigation .card-body > ul[class*="tree"] {
-        background-color: inherit !important;
-        padding: 0 !important;
-    }
-
-    /* Tabs legacy basados en tablas */
-    [role="tab"],
-    td[role="presentation"],
-    td[id*="selected"],
-    td[class*="tab"],
-    td[class*="button"] {
-        background-color: var(--auto-bg-dim) !important;
+    .nav-search-input:focus,
+    [class*="nav-search"] input:focus {
         color: var(--auto-text) !important;
     }
+}
 
-    /* Tab activo */
-    [role="tab"][aria-selected="true"] {
-        background-color: var(--auto-bg-dark) !important;
-        color: var(--auto-text) !important;
+@-moz-document domain("deepseek.com") {
+    :root {
+        color-scheme: dark !important;
     }
 
-    /* Área clickeable del tab */
-    [role="tab"] {
-        display: inline-block !important;
-        padding: 0.4em 0.7em !important;
-        border-radius: 6px 6px 0 0;
+    :is(p, span, li, label, small, strong, em, b, i, h1, h2, h3, h4, h5, h6)
+    :is(main, article, section, aside, nav, header, footer, [class*="app"], [class*="view-"], [class*="panel"]) {
+        color: revert !important;
+        background-color: revert !important;
+    }
+
+    .ds-scroll-area__gutters, .ds-markdown,
+    [class*="ds-"] {
+        background-color: revert !important;
+        color: revert !important;
     }
 
 }
