@@ -1,6 +1,6 @@
 @-moz-document url("about:home"), url("about:newtab") {
     :root {
-        --wallpaper-dark1: url("images/dark1.png");
+        --wallpaper-dark1: url("images/dark8.png");
         --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
         --tx-dark1: #ccddef;
         --uc-bg: rgb(40, 40, 45);
@@ -57,7 +57,7 @@
 
     .tile,
     .top-site-icon {
-        background: transparent !important;
+        background-color: transparent !important;
         box-shadow: none !important;
         border: none !important;
     }
@@ -66,11 +66,13 @@
         height: 50%;
         background-color: var(--tr-col);
         border-radius: var(--giant-rounding, 20px);
+        align-self: center !important;
     }
 
     .wallpaper-attribution {
         display: none !important;
     }
+    
 }
 
 @-moz-document url-prefix("http") {
@@ -105,11 +107,6 @@
         background-color: color-mix(in srgb, var(--auto-bg-dark) 92%, transparent) !important;
         color: var(--auto-text) !important;
         box-shadow: 0 10px 40px rgba(0,0,0,.55) !important;
-    }
-
-    input, textarea, select {
-        background-color: color-mix(in srgb, var(--auto-bg-dim) 90%, transparent) !important;
-        color: inherit !important;
     }
 
     hr, fieldset { border-color: var(--auto-border) !important; }

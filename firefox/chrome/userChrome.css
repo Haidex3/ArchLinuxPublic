@@ -32,6 +32,9 @@
     --in-content-primary-button-text-color: var(--c-text) !important;
     --in-content-primary-button-background: var(--toolbarbutton-hover-background) !important;
     --in-content-primary-button-background-hover: var(--toolbarbutton-active-background) !important;
+    --toolbar-field-focus-background-color: var(--c-mantle) !important;
+    --urlbar-box-bgcolor: var(--c-mantle) !important;
+    --toolbar-field-color: var(--c-accent) !important;
 }
 
 /* Cambia el color del ícono de permisos concedidos */
@@ -155,14 +158,14 @@
 
 /* Aplica color de fondo a la barra de navegación */
 #nav-bar {
-  background-color: #0f1117 !important;
-  background-image: none !important;
+    background-color: #0f1117 !important;
+    background-image: none !important;
 }
 
 /* Elimina efectos de desenfoque y transparencias de elementos de navegación */
 #nav-bar,
 #urlbar-background {
-  backdrop-filter: none !important;
+    backdrop-filter: none !important;
 }
 
 /* Aplica bordes redondeados y márgenes a los elementos de motor de búsqueda */
@@ -210,4 +213,19 @@
     ):not(#urlbar-container, #personal-bookmarks) {
     transition: all 0.15s ease !important;
 
+}
+
+
+#PersonalToolbar {
+    background-color: color-mix(in srgb, var(--c-mantle) 80%, transparent) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+#urlbar[focused],
+#urlbar[breakout][breakout-extend] {
+    background-color: var(--c-mantle, rgb(32, 34, 40)) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+    background-color: var(--c-mantle) !important;
 }

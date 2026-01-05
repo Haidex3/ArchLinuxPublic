@@ -57,7 +57,7 @@
 
     .tile,
     .top-site-icon {
-        background: transparent !important;
+        background-color: transparent !important;
         box-shadow: none !important;
         border: none !important;
     }
@@ -66,6 +66,7 @@
         height: 50%;
         background-color: var(--tr-col);
         border-radius: var(--giant-rounding, 20px);
+        align-self: center !important;
     }
 
     .wallpaper-attribution {
@@ -90,7 +91,6 @@
         filter: none !important;
     }
 
-    /* Contenedores principales */
     main, article, section, aside, nav, header, footer, body > div,
     [data-region], [role="application"], [role="main"],
     [class*="app"], [class*="drawer"], [class*="view-"],
@@ -101,7 +101,6 @@
         border-color: var(--auto-border) !important;
     }
 
-    /* Diálogos y menús */
     [role="dialog"], [role="menu"], [aria-modal="true"],
     .modal, .dialog, .dropdown, .popover, .menu, .popup {
         background-color: color-mix(in srgb, var(--auto-bg-dark) 92%, transparent) !important;
@@ -109,17 +108,9 @@
         box-shadow: 0 10px 40px rgba(0,0,0,.55) !important;
     }
 
-    /* Formularios */
-    input, textarea, select {
-        background-color: color-mix(in srgb, var(--auto-bg-dim) 90%, transparent) !important;
-        color: inherit !important;
-    }
-
-    /* Bordes y líneas */
     hr, fieldset { border-color: var(--auto-border) !important; }
     * { outline-color: var(--auto-border) !important; }
 
-    /* Tablas */
     table {
         background-color: var(--auto-bg-dim) !important;
         color: var(--auto-text) !important;
@@ -131,13 +122,11 @@
         border-color: var(--auto-border) !important;
     }
 
-    /* Código */
     pre, kbd, samp {
         background-color: color-mix(in srgb, var(--auto-bg-dark) 90%, transparent) !important;
         color: #cdd6f4 !important;
     }
 
-    /* MERCADOLIBRE - Cards unificadas */
     [class*="poly-card"],
     [class*="card-grid"],
     [class*="dynamic-access-card"],
@@ -167,7 +156,6 @@
         fill: currentColor !important;
     }
 
-    /* MERCADOLIBRE - Navegación */
     [class*="nav-"],
     [class*="header"],
     [class*="menu"],
@@ -185,7 +173,6 @@
         color: inherit !important;
     }
 
-    /* MERCADOLIBRE - Barra de búsqueda */
     .nav-search-input,
     [class*="nav-search"] input {
         color: var(--auto-text) !important;
@@ -204,7 +191,6 @@
     }
 }
 
-/* EXCLUSIÓN DEEPSEEK */
 @-moz-document domain("deepseek.com") {
     :root {
         color-scheme: dark !important;
@@ -215,4 +201,11 @@
         color: revert !important;
         background-color: revert !important;
     }
+
+    .ds-scroll-area__gutters, .ds-markdown,
+    [class*="ds-"] {
+        background-color: revert !important;
+        color: revert !important;
+    }
+
 }

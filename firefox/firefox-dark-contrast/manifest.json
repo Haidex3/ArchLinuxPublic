@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Adaptive Dark Mode (Local)",
-  "version": "1.0",
+  "version": "1.3",
   "description": "Dark mode por contraste real (local, sin recolección de datos)",
 
   "content_scripts": [

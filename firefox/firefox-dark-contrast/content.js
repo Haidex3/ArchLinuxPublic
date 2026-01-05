@@ -1,6 +1,17 @@
 (() => {
   'use strict';
 
+  const isGoogleNavigation =
+    location.hostname.includes('google.') &&
+    (
+      location.pathname === '/' ||
+      location.pathname.startsWith('/search') ||
+      location.pathname.startsWith('/imghp') ||
+      location.pathname.startsWith('/imgres')
+    );
+
+  if (isGoogleNavigation) {return;}
+
   const DARK_BG = '#1a1c23';
   const DARK_TEXT = '#e6e6e6';
   const BORDER = '#2a2d3a';
