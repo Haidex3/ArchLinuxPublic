@@ -1,0 +1,10 @@
+{
+    "name": "hathemefox",
+    "version": "0.0.1",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/firefox-webext-browser": "^120.0.4",
+        "typescript": "^5.9.3",
+        "web-ext": "^8.4.0"
+    }
+}

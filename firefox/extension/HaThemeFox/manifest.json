@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "theme",
+    "version": "1.0",
+    "description": "A Firefox theme with dynamic colours from my hatheme dotfiles.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "adaptive-theme-contrast@local",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+    "background": {
+        "scripts": ["dist/extension.js"]
+    },
+    "permissions": ["nativeMessaging", "theme"]
+}

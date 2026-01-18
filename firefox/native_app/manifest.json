@@ -1,0 +1,7 @@
+{
+    "name": "hatheme",
+    "description": "Native app for HaTheme extension.",
+    "path": "$SRC/native_app/app.fish",
+    "type": "stdio",
+    "allowed_extensions": ["hatheme@haider"]
+}
