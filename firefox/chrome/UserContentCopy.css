@@ -1,0 +1,298 @@
+@-moz-document url("about:home"), url("about:newtab") {
+    :root {
+        --wallpaper-dark1: url("images/dark8.png");
+        --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
+        --tx-dark1: #ccddef;
+        --uc-bg: rgb(40, 40, 45);
+        --uc-accent: rgb(237, 221, 170);
+        --uc-accent-orange: rgb(228, 127, 45);
+    }
+
+    * {
+        --tr-hov-col: color-mix(in srgb, var(--tr-col) 80%, var(--tx-dark1));
+        --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-background-color) 90%, var(--tx-dark1)) !important;
+        --newtab-contextual-text-primary-color: var(--tx-dark1) !important;
+        --newtab-wordmark-color: var(--tx-dark1) !important;
+        --background-color-box: var(--tr-col) !important;
+    }
+
+    body {
+        --tr-col: var(--tr-dark1) !important;
+        --newtab-text-primary-color: var(--tx-dark1) !important;
+        background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-dark1) !important;
+        width: 100% !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    body:not([class*="Wallpaper"])::before {
+        content: "";
+        position: absolute;
+        height: 130vh;
+        aspect-ratio: 1;
+        top: 100%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23fff" fill-rule="evenodd" d="M16 22.2a6.2 6.2 0 1 0 0-12.4 6.2 6.2 0 0 0 0 12.4zm10.7-6.2a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0zm5.3 0A16 16 0 1 1 0 16a16 16 0 0 1 32 0z"/></svg>') center no-repeat;
+        opacity: 0.05 !important;
+    }
+
+    .top-site-button,
+    .search-handoff-button {
+        background-color: var(--tr-col) !important;
+        backdrop-filter: blur(var(--blur-radius));
+        border-radius: var(--rounding, 8px) !important;
+    }
+
+    .top-site-outer,
+    .icon-settings,
+    .weatherCard {
+        border-radius: var(--big-rounding, 12px) !important;
+    }
+
+    .top-site-outer:is(.active, :focus, :hover),
+    .icon-settings:hover {
+        background-color: var(--tr-hov-col) !important;
+    }
+
+    .tile,
+    .top-site-icon {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    main {
+        height: 50%;
+        background-color: var(--tr-col);
+        border-radius: var(--giant-rounding, 20px);
+        align-self: center !important;
+    }
+
+    .wallpaper-attribution {
+        display: none !important;
+    }
+    
+}
+
+@-moz-document url-prefix("http") {
+    :root {
+        color-scheme: dark !important;
+
+        --auto-bg-dim: #0e1014;
+        --auto-bg-dark: #1f1f2b;
+        --auto-bg-dark2: #2a273a;
+
+        --auto-border: #2f2a3d;
+        --auto-text: #e6e6e6;
+    }
+
+    html { background-color: var(--auto-bg-dark) !important; }
+    body { background: transparent !important; }
+
+    video, img, picture, canvas, svg, iframe, embed, object {
+        background: transparent !important;
+        filter: none !important;
+    }
+
+    main, article, section, aside, nav, header, footer, body > div,
+    [data-region], [role="application"], [role="main"],
+    [class*="app"], [class*="drawer"], [class*="view-"],
+    [class*="panel"], [class*="overview"],
+    .card, .section, [class*="section"] {
+        background-color: color-mix(
+            in srgb,
+            var(--auto-bg-dark2) 35%,
+            var(--auto-bg-dim)
+        ) !important;
+
+        color: var(--auto-text) !important;
+        border-color: var(--auto-border) !important;
+    }
+
+    [role="dialog"], [role="menu"], [aria-modal="true"],
+    .modal, .dialog, .dropdown, .popover, .menu, .popup {
+        background-color: color-mix(
+            in srgb,
+            var(--auto-bg-dark2) 60%,
+            var(--auto-bg-dark)
+        ) !important;
+
+        color: var(--auto-text) !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,.6) !important;
+    }
+
+    hr, fieldset { border-color: var(--auto-border) !important; }
+    * { outline-color: var(--auto-border) !important; }
+
+    table {
+        background-color: color-mix(
+            in srgb,
+            var(--auto-bg-dark2) 25%,
+            var(--auto-bg-dim)
+        ) !important;
+
+        color: var(--auto-text) !important;
+        border-color: var(--auto-border) !important;
+    }
+
+    th, td {
+        background-color: color-mix(
+            in srgb,
+            var(--auto-bg-dark2) 45%,
+            var(--auto-bg-dark)
+        ) !important;
+
+        border-color: var(--auto-border) !important;
+    }
+
+    pre, kbd, samp {
+        background-color: color-mix(
+            in srgb,
+            var(--auto-bg-dark2) 55%,
+            var(--auto-bg-dark)
+        ) !important;
+
+        color: #cdd6f4 !important;
+    }
+
+    [class*="poly-card"],
+    [class*="card-grid"],
+    [class*="dynamic-access-card"],
+    [class*="andes-card"],
+    [class*="ui-card"] {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] :where(span, p, div):not(a > *),
+    [class*="card-grid"] :where(span, p, div):not(a > *),
+    [class*="dynamic-access-card"] :where(span, p, div) {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] a,
+    [class*="card-grid"] a {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="poly-card"] a:is(:hover, :focus, :active),
+    [class*="card-grid"] a:is(:hover, :focus, :active) {
+        color: revert !important;
+    }
+
+    [class*="poly-card"] :where(svg, path),
+    [class*="card-grid"] :where(svg, path) {
+        fill: currentColor !important;
+    }
+
+    [class*="nav-"],
+    [class*="header"],
+    [class*="menu"],
+    [class*="user-menu"],
+    [class*="user-menu"] :where(li, ul) {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="nav-"] a:is(:hover, :focus, :active),
+    [class*="user-menu"] a:is(:hover, :focus, :active) {
+        color: revert !important;
+    }
+
+    .user-menu-guest-item > a {
+        color: inherit !important;
+    }
+
+    .nav-search-input,
+    [class*="nav-search"] input {
+        color: var(--auto-text) !important;
+        background-color: var(--auto-bg-dark2) !important;
+        border-color: var(--auto-border) !important;
+    }
+
+    .nav-search-input::placeholder,
+    [class*="nav-search"] input::placeholder {
+        color: color-mix(in srgb, var(--auto-text) 65%, transparent) !important;
+    }
+
+    .nav-search-input:focus,
+    [class*="nav-search"] input:focus {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="t-black"],
+    [class*="text-black"] {
+        color: var(--auto-text) !important;
+    }
+
+    [class*="t-white"],
+    [class*="text-white"] {
+        color: #fff !important;
+    }
+
+    .artdeco-hoverable-trigger,
+    .artdeco-hoverable-trigger *,
+    .artdeco-entity-lockup *,
+    .artdeco-entity-lockup__title,
+    .artdeco-entity-lockup__subtitle,
+    .artdeco-entity-lockup__caption,
+    .ember-view {
+        color: var(--auto-text) !important;
+    }
+
+    a.artdeco-hoverable-trigger,
+    a.artdeco-hoverable-trigger span {
+        color: var(--auto-text) !important;
+    }
+
+    a.artdeco-hoverable-trigger:is(:hover, :focus) {
+        color: revert !important;
+    }
+
+    .ember-view:not(a):not(button) { color: var(--auto-text) !important; }
+    
+    body :where(
+        p,span, li, dt, dd, a, strong, em, small, label, figcaption, blockquote
+    ):not(
+        pre *,
+        code *,
+        textarea *,
+        [role="textbox"] *,
+        [contenteditable] *,
+        [data-testid*="code"] *,
+        .blob-code *,
+        .react-code-text *,
+        .markdown-body pre *
+    ) {
+        color: var(--auto-text) !important;
+    }
+
+}
+
+@-moz-document domain("deepseek.com") {
+    :root {
+        color-scheme: dark !important;
+    }
+
+    :is(p, span, li, label, small, strong, em, b, i, h1, h2, h3, h4, h5, h6)
+    :is(main, article, section, aside, nav, header, footer, [class*="app"], [class*="view-"], [class*="panel"]) {
+        color: revert !important;
+        background-color: revert !important;
+    }
+
+    .ds-scroll-area__gutters, .ds-markdown,
+    [class*="ds-"] {
+        background-color: revert !important;
+        color: revert !important;
+    }
+
+}
+@-moz-document regexp("https?://([^/]*\\.)?google\\.[^/]+/") {
+  body :where(
+    p, span, li, dt, dd, a,
+    strong, em, small, label,
+    figcaption, blockquote
+  ) {
+    color: revert !important;
+  }
+}
+

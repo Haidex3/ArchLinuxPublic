@@ -1,0 +1,229 @@
+:root {
+    color-scheme: dark !important;
+    --c-accent: #a746e7;
+    --c-text: var(--toolbar-color);
+    --c-mantle: var(--lwt-accent-color);
+    --c-base: var(--tabpanel-background-color);
+    --c-surface0: var(--tab-selected-bgcolor);
+    --c-surface1: var(--arrowpanel-border-color);
+
+    --zen-primary-color: var(--c-surface0) !important;
+    --zen-colors-primary: var(--c-accent) !important;
+    --zen-colors-secondary: var(--c-surface0) !important;
+    --zen-colors-tertiary: var(--c-base) !important;
+    --zen-colors-border: var(--c-surface1) !important;
+    --toolbarbutton-icon-fill: var(--c-accent) !important;
+    --toolbarbutton-icon-fill-attention-text-light: var(--c-text) !important;
+    --toolbarbutton-icon-fill-attention-text-dark: var(--c-base) !important;
+    --lwt-text-color: var(--c-text) !important;
+    --toolbar-field-color: color-mix(in srgb, var(--c-text), transparent 15%) !important;
+    --toolbar-field-focus-color: color-mix(in srgb, var(--c-text), transparent 10%) !important;
+    --arrowpanel-color: var(--c-text) !important;
+    --arrowpanel-background: var(--c-base) !important;
+    --lwt-sidebar-text-color: var(--c-text) !important;
+    --lwt-sidebar-background-color: var(--c-mantle) !important;
+    --toolbar-bgcolor: var(--c-surface0) !important;
+    --newtab-background-color: var(--c-base) !important;
+    --zen-themed-toolbar-bg: var(--c-mantle) !important;
+    --zen-main-browser-background: var(--c-mantle) !important;
+    --urlbarView-highlight-color: var(--c-text) !important;
+    --in-content-primary-button-text-color: var(--c-text) !important;
+    --in-content-primary-button-background: var(--toolbarbutton-hover-background) !important;
+    --in-content-primary-button-background-hover: var(--toolbarbutton-active-background) !important;
+    --toolbar-field-focus-background-color: var(--c-mantle) !important;
+    --urlbar-box-bgcolor: var(--c-mantle) !important;
+    --toolbar-field-color: var(--c-accent) !important;
+}
+
+/* Cambia el color del ícono de permisos concedidos */
+#permissions-granted-icon {
+    color: var(--c-mantle) !important;
+}
+
+/* Aplica color de fondo al árbol de lugares en la barra lateral */
+.sidebar-placesTree {
+    background-color: var(--c-base) !important;
+}
+
+/* Personaliza el fondo de la barra de direcciones */
+#urlbar-background {
+    background-color: var(--c-surface0) !important;
+}
+
+/* Cambia el color de fondo de la barra de pestañas */
+#TabsToolbar {
+    background-color: var(--c-mantle) !important;
+}
+
+/* Estiliza los atajos de contenido con colores y bordes personalizados */
+.content-shortcuts {
+    background-color: var(--c-base) !important;
+    border-color: var(--c-accent) !important;
+}
+
+/* Cambia el color de las URLs en la vista de sugerencias */
+.urlbarView-url {
+    color: var(--c-accent) !important;
+}
+
+/* Aplica color de fondo al contenedor del favicon en el panel de edición de marcadores */
+#zenEditBookmarkPanelFaviconContainer {
+    background: var(--c-mantle) !important;
+}
+
+/* Cambia el color de relleno de los botones de la barra de herramientas */
+
+/* Define dimensiones personalizadas para el autoscroller */
+#autoscroller {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+/* Aplica color de fondo al contenedor de la barra de direcciones */
+#urlbar-container {
+    background: var(--c-mantle) !important;
+}
+
+/* Centra el texto de la barra de direcciones cuando no está enfocada */
+#urlbar:not([focused]) .urlbar-input {
+    text-align: center !important;
+}
+
+/* Define animación para mostrar la barra de direcciones flotante */
+@keyframes floating-urlbar-show {
+    0% {
+        opacity: 0;
+        scale: 0.8;
+        translate: -10% 0;
+    }
+
+    70% {
+        scale: 1.02;
+        translate: 1% 0;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
+
+/* Aplica animación a la barra de direcciones cuando se extiende */
+#urlbar[breakout-extend] {
+    animation: 200ms floating-urlbar-show ease-out;
+}
+
+/* Aplica efectos de desenfoque y bordes redondeados a diálogos y menús emergentes */
+#commonDialog,
+.menupopup-arrowscrollbox {
+    border-radius: 10px !important;
+    border: 1px solid color-mix(in srgb, var(--arrowpanel-border-color), transparent 70%) !important;
+    background: color-mix(in srgb, var(--arrowpanel-background), transparent 15%) !important;
+    backdrop-filter: blur(25px) !important;
+}
+
+/* Estiliza específicamente el diálogo común con color de fondo personalizado */
+#commonDialog {
+    background: color-mix(in srgb, var(--zen-branding-bg), transparent 15%) !important;
+}
+
+/* Aplica efectos de desenfoque y estilos a la barra de direcciones flotante */
+#urlbar[zen-floating-urlbar][breakout][breakout-extend] > #urlbar-background {
+    border: 1px solid color-mix(in srgb, var(--zen-colors-border), transparent 70%) !important;
+    border-radius: 10px !important;
+    background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 15%) !important;
+    backdrop-filter: blur(25px) !important;
+}
+
+/* Ajusta el padding del contenedor de entrada en la barra de direcciones extendida */
+#urlbar[breakout-extend] .urlbar-input-container {
+    padding-top: 7px !important;
+    padding-bottom: 0px !important;
+}
+
+/* Elimina bordes del área interna del cuerpo de la vista de URL */
+.urlbarView-body-inner {
+    border: none !important;
+}
+
+/* Estiliza las opciones de búsqueda eliminando bordes y ajustando márgenes */
+.search-one-offs {
+    border-top: none !important;
+    padding: 4px !important;
+    margin: 0px 0px 7px 0px !important;
+}
+
+/* Aplica color de fondo a la barra de navegación */
+#nav-bar {
+    background-color: #0f1117 !important;
+    background-image: none !important;
+}
+
+/* Elimina efectos de desenfoque y transparencias de elementos de navegación */
+#nav-bar,
+#urlbar-background {
+    backdrop-filter: none !important;
+}
+
+/* Aplica bordes redondeados y márgenes a los elementos de motor de búsqueda */
+.searchbar-engine-one-off-item {
+    border-radius: 8px !important;
+    margin-right: 3px !important;
+}
+
+/* Ajusta el margen derecho de la configuración de búsqueda anónima */
+#urlbar-anon-search-settings {
+    margin-right: 0px !important;
+}
+
+/* Elimina bordes y outlines por defecto de todos los elementos */
+* {
+    border: 0px solid transparent;
+    outline: 0px solid transparent;
+}
+
+/* Aplica efectos visuales a pestañas no cargadas (escala de grises y transparencia) */
+.tabbrowser-tab[pending] {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+/* Define transiciones suaves para múltiples elementos interactivos */
+:is(
+        .tab-background,
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack,
+        .toolbarbutton-1,
+        .bookmark-item,
+        .PanelUI-zen-profiles-item,
+        .download-state,
+        .urlbarView-row,
+        .urlbarView-action,
+        .searchbar-engine-one-off-item,
+        #urlbar-search-mode-indicator,
+        #tracking-protection-icon-container,
+        #page-action-buttons > *,
+        #identity-box > *,
+        button,
+        menu,
+        menuitem,
+    ):not(#urlbar-container, #personal-bookmarks) {
+    transition: all 0.15s ease !important;
+
+}
+
+
+#PersonalToolbar {
+    background-color: color-mix(in srgb, var(--c-mantle) 80%, transparent) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+#urlbar[focused],
+#urlbar[breakout][breakout-extend] {
+    background-color: var(--c-mantle, rgb(32, 34, 40)) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+    background-color: var(--c-mantle) !important;
+}

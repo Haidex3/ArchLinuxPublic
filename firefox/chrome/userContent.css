@@ -1,0 +1,77 @@
+@-moz-document url("about:home"), url("about:newtab") {
+    :root {
+        --wallpaper-dark1: url("images/dark8.png");
+        --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
+        --tx-dark1: #ccddef;
+        --uc-bg: rgb(40, 40, 45);
+        --uc-accent: rgb(237, 221, 170);
+        --uc-accent-orange: rgb(228, 127, 45);
+    }
+
+    * {
+        --tr-hov-col: color-mix(in srgb, var(--tr-col) 80%, var(--tx-dark1));
+        --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-background-color) 90%, var(--tx-dark1)) !important;
+        --newtab-contextual-text-primary-color: var(--tx-dark1) !important;
+        --newtab-wordmark-color: var(--tx-dark1) !important;
+        --background-color-box: var(--tr-col) !important;
+    }
+
+    body {
+        --tr-col: var(--tr-dark1) !important;
+        --newtab-text-primary-color: var(--tx-dark1) !important;
+        background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-dark1) !important;
+        width: 100% !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    body:not([class*="Wallpaper"])::before {
+        content: "";
+        position: absolute;
+        height: 130vh;
+        aspect-ratio: 1;
+        top: 100%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%23fff" fill-rule="evenodd" d="M16 22.2a6.2 6.2 0 1 0 0-12.4 6.2 6.2 0 0 0 0 12.4zm10.7-6.2a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0zm5.3 0A16 16 0 1 1 0 16a16 16 0 0 1 32 0z"/></svg>') center no-repeat;
+        opacity: 0.05 !important;
+    }
+
+    .top-site-button,
+    .search-handoff-button {
+        background-color: var(--tr-col) !important;
+        backdrop-filter: blur(var(--blur-radius));
+        border-radius: var(--rounding, 8px) !important;
+    }
+
+    .top-site-outer,
+    .icon-settings,
+    .weatherCard {
+        border-radius: var(--big-rounding, 12px) !important;
+    }
+
+    .top-site-outer:is(.active, :focus, :hover),
+    .icon-settings:hover {
+        background-color: var(--tr-hov-col) !important;
+    }
+
+    .tile,
+    .top-site-icon {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    main {
+        height: 50%;
+        background-color: var(--tr-col);
+        border-radius: var(--giant-rounding, 20px);
+        align-self: center !important;
+    }
+
+    .wallpaper-attribution {
+        display: none !important;
+    }
+    
+}
+
