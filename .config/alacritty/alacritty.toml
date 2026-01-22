@@ -1,8 +1,5 @@
-[colors]
-
-[colors.primary]
-background = "#15152c"
-foreground = "#E1EFFF"
+[general]
+import = ["~/.config/alacritty/colors.toml"]
 
 [colors.cursor]
 text = "#1E1E3F"
@@ -20,36 +17,13 @@ white   = "#c88bad"
 
 [colors.bright]
 black   = "#5C5C61"
-red = "#EC3A37"
+red     = "#EC3A37"
 green   = "#23c887"
 yellow  = "#FAD000"
 blue    = "#6943FF"
 magenta = "#FB94FF"
 cyan    = "#2cb4d9"
 white   = "#2D2B55"
-
-
-# ------------------------------------------------------------
-# Alacritty config
-# Adapted from Kitty configuration (non-color options only)
-# Author: Andr3xDev (original kitty config)
-# Adapted for Alacritty by Haider
-# ------------------------------------------------------------
-
-# ------------------------------------------------------------
-# Font
-# ------------------------------------------------------------
-[font]
-normal.family = "JetBrains Mono Nerd Font"
-bold.family = "JetBrains Mono Nerd Font"
-italic.family = "JetBrains Mono Nerd Font"
-bold_italic.family = "JetBrains Mono Nerd Font"
-
-size = 9.8
-
-# ------------------------------------------------------------
-# Window & visuals
-# ------------------------------------------------------------
 [window]
 opacity = 1.0
 decorations = "Full"
@@ -58,42 +32,24 @@ decorations = "Full"
 x = 4
 y = 4
 
-# ------------------------------------------------------------
-# Cursor
-# ------------------------------------------------------------
 [cursor]
 style = "Beam"
 blink_interval = 500
 unfocused_hollow = false
 
-# ------------------------------------------------------------
-# Scrolling
-# ------------------------------------------------------------
 [scrolling]
 history = 10000
 multiplier = 3
 
-# ------------------------------------------------------------
-# Bell
-# ------------------------------------------------------------
 [bell]
 duration = 0
 
-# ------------------------------------------------------------
-# Selection
-# ------------------------------------------------------------
 [selection]
 save_to_clipboard = true
 
-# ------------------------------------------------------------
-# Mouse
-# ------------------------------------------------------------
 [mouse]
 hide_when_typing = true
 
-# ------------------------------------------------------------
-# Hints (URLs)
-# ------------------------------------------------------------
 [[hints.enabled]]
 regex = "(https?|ftp)://[^\\s]+"
 command = "xdg-open"
@@ -101,8 +57,5 @@ post_processing = true
 mouse.enabled = true
 binding = { key = "U", mods = "Control|Shift" }
 
-# ------------------------------------------------------------
-# ENV (Wayland friendly)
-# ------------------------------------------------------------
 [env]
 TERM = "xterm-256color"

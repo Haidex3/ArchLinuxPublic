@@ -1,11 +1,12 @@
+@import "hatheme-state.css";
 @-moz-document url("about:home"), url("about:newtab") {
     :root {
-        --wallpaper-dark1: url("images/dark8.png");
         --tr-dark1: color-mix(in srgb, #77aacb 15%, transparent);
         --tx-dark1: #ccddef;
-        --uc-bg: rgb(40, 40, 45);
         --uc-accent: rgb(237, 221, 170);
         --uc-accent-orange: rgb(228, 127, 45);
+        --newtab-background-color: var(--bg-base) !important;
+        --tx-dark1: var(--c-text);
     }
 
     * {
@@ -19,10 +20,14 @@
     body {
         --tr-col: var(--tr-dark1) !important;
         --newtab-text-primary-color: var(--tx-dark1) !important;
-        background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-dark1) !important;
         width: 100% !important;
         height: 100vh !important;
         overflow: hidden !important;
+        background:
+        color-mix(in srgb, var(--bg-base) 80%, transparent)
+        var(--wallpaper-dark1, none) !important;
+        background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-current) !important;
+        
     }
 
     body:not([class*="Wallpaper"])::before {

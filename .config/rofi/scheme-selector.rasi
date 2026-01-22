@@ -89,7 +89,7 @@ element {
 }
 
 element-icon {
-    size:                           49px;
+    size:                           213px;
     border:                         0px;
 }
 
