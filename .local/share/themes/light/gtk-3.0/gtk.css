@@ -1,0 +1,20 @@
+/* ===== dark theme (minimal) ===== */
+
+* {
+    background-color: #0f111a;
+    color: #cdd6f4;
+}
+
+window {
+    background-color: #0f111a;
+}
+
+headerbar {
+    background-color: #0b0d14;
+    border-bottom: 1px solid #1e1e2e;
+}
+
+button {
+    background-color: #1e1e2e;
+    border-radius: 6px;
+}

@@ -1,0 +1,16 @@
+colors:
+  background: "#131317"
+  foreground: "#e4e1e7"
+  cursor: "#6674ac
+#b7c4ff
+#6674ac
+#dce1ff
+#b7c4ff"
+  primary: "#6674ac"
+  secondary: "#71768e"
+  success: "#B5CCBA
+#374B3E"
+  error: "#ffb4ab
+#93000a"
+  warning: "#ffecf3"
+  info: "#a6baff"

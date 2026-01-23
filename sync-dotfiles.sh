@@ -16,6 +16,10 @@ FIREFOX_CHROME_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/firefox/chrome"
 HATHEME_SHARE_SOURCE="$HOME/.local/share/hatheme"
 HATHEME_SHARE_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/.local/share/hatheme"
 
+# System themes (.local/share/themes)
+THEMES_SHARE_SOURCE="$HOME/.local/share/themes"
+THEMES_SHARE_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/.local/share/themes"
+
 HATHEME_STATE_SOURCE="$HOME/.local/state/hatheme"
 HATHEME_STATE_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/.local/state/hatheme"
 
@@ -70,6 +74,21 @@ if [ -d "$FIREFOX_CHROME_SOURCE" ]; then
 else
     echo "⚠️  No se encontró la carpeta chrome de Firefox"
 fi
+
+# =========================
+# Sync .local/share/themes
+# =========================
+if [ -d "$THEMES_SHARE_SOURCE" ]; then
+    echo "➡️  Sync .local/share/themes"
+    mkdir -p "$THEMES_SHARE_TARGET"
+    rsync -av --delete \
+        --exclude='.git/' \
+        --exclude='*.log' \
+        "$THEMES_SHARE_SOURCE/" "$THEMES_SHARE_TARGET/"
+else
+    echo "⚠️  No existe .local/share/themes"
+fi
+
 
 # =========================
 # Sync HaTheme (.local/share)

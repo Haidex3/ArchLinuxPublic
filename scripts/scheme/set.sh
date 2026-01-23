@@ -86,4 +86,41 @@ fi
 
 echo "Theme '$SELECTED' applied successfully."
 
+
 scripts/scheme/apply-theme.sh
+
+GTK_SETTINGS="$HOME/.config/gtk-3.0/settings.ini"
+
+mkdir -p "$(dirname "$GTK_SETTINGS")"
+
+# Crear archivo si no existe
+if [[ ! -f "$GTK_SETTINGS" ]]; then
+cat > "$GTK_SETTINGS" <<EOF
+[Settings]
+gtk-theme-name=$SELECTED
+gtk-icon-theme-name=Papirus-Dark
+gtk-font-name=Sans 10
+gtk-application-prefer-dark-theme=1
+EOF
+else
+    # Reemplazos seguros
+    sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$SELECTED/" "$GTK_SETTINGS" \
+        || echo "gtk-theme-name=$SELECTED" >> "$GTK_SETTINGS"
+
+    sed -i "s/^gtk-icon-theme-name=.*/gtk-icon-theme-name=Papirus-Dark/" "$GTK_SETTINGS" \
+        || echo "gtk-icon-theme-name=Papirus-Dark" >> "$GTK_SETTINGS"
+
+    sed -i "s/^gtk-font-name=.*/gtk-font-name=Sans 10/" "$GTK_SETTINGS" \
+        || echo "gtk-font-name=Sans 10" >> "$GTK_SETTINGS"
+
+    sed -i "s/^gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=1/" "$GTK_SETTINGS" \
+        || echo "gtk-application-prefer-dark-theme=1" >> "$GTK_SETTINGS"
+fi
+
+# =====================
+# GTK refresh
+# =====================
+gsettings set org.gnome.desktop.interface gtk-theme "$SELECTED"
+gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+gsettings set org.gnome.desktop.interface font-name "Sans 10"
+
