@@ -1,0 +1,166 @@
+{
+  "workbench.colorTheme": "dark-simple",
+
+  "editor.semanticHighlighting.enabled": true,
+
+  "workbench.colorCustomizations": {
+    "breadcrumb.foreground": "#9aa0a6",
+    "editor.background": "#0f1115",
+    "editor.foreground": "#dcdfe4",
+    "editorCursor.foreground": "#5aa9ff",
+
+    "editor.selectionBackground": "#263040",
+    "editor.inactiveSelectionBackground": "#1e2633",
+    "editor.lineHighlightBackground": "#161a22",
+
+    "editor.wordHighlightBackground": "#263040",
+    "editor.wordHighlightStrongBackground": "#2f3b52",
+
+    "editorLineNumber.foreground": "#5c6370",
+    "editorLineNumber.activeForeground": "#5aa9ff",
+
+    "activityBar.background": "#141821",
+    "activityBar.foreground": "#dcdfe4",
+    "activityBarBadge.background": "#5aa9ff",
+    "activityBarBadge.foreground": "#0f1115",
+
+    "sideBar.background": "#141821",
+    "sideBar.foreground": "#c9ccd3",
+    "sideBarSectionHeader.background": "#0f1115",
+    "sideBarSectionHeader.foreground": "#5aa9ff",
+
+    "statusBar.background": "#141821",
+    "statusBar.foreground": "#c9ccd3",
+    "statusBar.noFolderBackground": "#141821",
+    "statusBar.debuggingBackground": "#3a7bd5",
+
+    "titleBar.activeBackground": "#141821",
+    "titleBar.activeForeground": "#5aa9ff",
+    "titleBar.inactiveBackground": "#0f1115",
+    "titleBar.inactiveForeground": "#7a808a",
+
+    "panel.background": "#141821",
+    "panel.border": "#1e2633",
+    "panelTitle.activeForeground": "#5aa9ff",
+    "panelTitle.inactiveForeground": "#7a808a",
+
+    "tab.activeBackground": "#0f1115",
+    "tab.activeForeground": "#dcdfe4",
+    "tab.inactiveBackground": "#141821",
+    "tab.inactiveForeground": "#7a808a",
+    "tab.border": "#1e2633",
+
+    "input.background": "#0f1115",
+    "input.foreground": "#dcdfe4",
+    "input.border": "#1e2633",
+
+    "list.activeSelectionBackground": "#263040",
+    "list.activeSelectionForeground": "#5aa9ff",
+    "list.hoverBackground": "#161a22",
+    "list.focusBackground": "#263040"
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "support.type.property-name.json",
+          "entity.name.tag.json"
+        ],
+        "settings": {
+          "foreground": "#5aa9ff"
+        }
+      },
+      {
+        "scope": [
+          "string.json"
+        ],
+        "settings": {
+          "foreground": "#98c379"
+        }
+      },
+      {
+        "scope": [
+          "string",
+          "string.quoted",
+          "string.template"
+        ],
+        "settings": {
+          "foreground": "#98c379"
+        }
+      },
+      {
+        "scope": [
+          "keyword",
+          "storage",
+          "storage.type"
+        ],
+        "settings": {
+          "foreground": "#c678dd"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type",
+          "support.type",
+          "entity.name.class",
+          "support.class"
+        ],
+        "settings": {
+          "foreground": "#5aa9ff"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#61afef"
+        }
+      },
+      {
+        "scope": [
+          "constant",
+          "constant.language",
+          "constant.numeric"
+        ],
+        "settings": {
+          "foreground": "#d19a66"
+        }
+      },
+      {
+        "scope": [
+          "punctuation",
+          "meta.brace"
+        ],
+        "settings": {
+          "foreground": "#a0a6b0"
+        }
+      }
+    ]
+  },
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "property": "#5aa9ff",
+      "propertyKey": "#5aa9ff",
+
+      "type": "#5aa9ff",
+      "class": "#5aa9ff",
+      "interface": "#5aa9ff",
+      "enum": "#5aa9ff",
+
+      "function": "#61afef",
+      "method": "#61afef",
+
+      "parameter": "#a0a6b0",
+      "property.readonly": "#5aa9ff",
+
+      "keyword": "#c678dd",
+      "string": "#98c379",
+      "number": "#d19a66"
+    }
+  }
+}

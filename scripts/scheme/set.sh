@@ -119,6 +119,37 @@ else
         || echo "gtk-application-prefer-dark-theme=1" >> "$GTK_SETTINGS"
 fi
 # =====================
+# Aplicar tema VS Code SIN heredar valores
+# =====================
+
+VSCODE_SETTINGS="$HOME/.config/Code/User/settings.json"
+THEME_JSON="$HOME/.config/Code/User/themes/$SELECTED.json"
+
+# Crear settings.json si no existe
+if [[ ! -f "$VSCODE_SETTINGS" ]]; then
+    echo "{}" > "$VSCODE_SETTINGS"
+fi
+
+TMP_FILE=$(mktemp)
+
+jq \
+  --slurpfile theme "$THEME_JSON" '
+    # 1. Borrar TODO lo relacionado con temas
+    del(
+      .["workbench.colorTheme"],
+      .["workbench.colorCustomizations"],
+      .["editor.tokenColorCustomizations"],
+      .["editor.semanticTokenColorCustomizations"]
+    )
+    # 2. Insertar el nuevo tema completo
+    * $theme[0]
+  ' "$VSCODE_SETTINGS" > "$TMP_FILE" && mv "$TMP_FILE" "$VSCODE_SETTINGS"
+
+echo "VS Code theme set to '$SELECTED' ✅"
+
+
+
+# =====================
 # YAZI theme
 # =====================
 YAZI_THEMES_DIR="$HOME/.config/yazi/themes"
@@ -134,6 +165,23 @@ if [[ -f "$YAZI_THEME_FILE" ]]; then
 else
     echo "⚠️ Yazi theme '$SELECTED.toml' not found"
 fi
+
+# =====================
+# Rofi current theme
+# =====================
+ROFI_THEMES_DIR="$HOME/.config/rofi/themes"
+ROFI_CURRENT_THEME="$ROFI_THEMES_DIR/current-theme.rasi"
+ROFI_SELECTED_THEME="$ROFI_THEMES_DIR/$SELECTED.rasi"
+
+mkdir -p "$ROFI_THEMES_DIR"
+
+if [[ -f "$ROFI_SELECTED_THEME" ]]; then
+    cp "$ROFI_SELECTED_THEME" "$ROFI_CURRENT_THEME"
+    echo "Rofi theme set to '$SELECTED'"
+else
+    echo "⚠️ Rofi theme '$SELECTED.rasi' not found"
+fi
+
 
 # =====================
 # GTK refresh

@@ -1,0 +1,187 @@
+{
+  "workbench.colorTheme": "light-ocean",
+
+  "editor.semanticHighlighting.enabled": true,
+
+  "workbench.colorCustomizations": {
+    "breadcrumb.foreground": "#415a6b",
+    "editor.background": "#f4f8fb",
+    "editor.foreground": "#1f2a33",
+    "editorCursor.foreground": "#0ea5a8",
+
+    "editor.selectionBackground": "#d7f1f2",
+    "editor.inactiveSelectionBackground": "#e7f6f7",
+    "editor.lineHighlightBackground": "#eef5f9",
+
+    "editor.wordHighlightBackground": "#d7f1f2",
+    "editor.wordHighlightStrongBackground": "#bfe8ea",
+
+    "editorLineNumber.foreground": "#8aa0b2",
+    "editorLineNumber.activeForeground": "#0ea5a8",
+
+    "activityBar.background": "#eaf2f7",
+    "activityBar.foreground": "#1f2a33",
+    "activityBarBadge.background": "#0ea5a8",
+    "activityBarBadge.foreground": "#ffffff",
+
+    "sideBar.background": "#eaf2f7",
+    "sideBar.foreground": "#2c3a44",
+    "sideBarSectionHeader.background": "#f4f8fb",
+    "sideBarSectionHeader.foreground": "#0ea5a8",
+
+    "statusBar.background": "#eaf2f7",
+    "statusBar.foreground": "#2c3a44",
+    "statusBar.noFolderBackground": "#eaf2f7",
+    "statusBar.debuggingBackground": "#38bdf8",
+
+    "titleBar.activeBackground": "#eaf2f7",
+    "titleBar.activeForeground": "#1f2a33",
+    "titleBar.inactiveBackground": "#deeaf2",
+    "titleBar.inactiveForeground": "#6b7f8f",
+
+    "panel.background": "#eaf2f7",
+    "panel.border": "#d2e2ec",
+    "panelTitle.activeForeground": "#0ea5a8",
+    "panelTitle.inactiveForeground": "#6b7f8f",
+
+    "tab.activeBackground": "#f4f8fb",
+    "tab.activeForeground": "#1f2a33",
+    "tab.inactiveBackground": "#deeaf2",
+    "tab.inactiveForeground": "#415a6b",
+    "tab.border": "#d2e2ec",
+
+    "input.background": "#ffffff",
+    "input.foreground": "#1f2a33",
+    "input.border": "#d2e2ec",
+
+    "list.activeSelectionBackground": "#d7f1f2",
+    "list.activeSelectionForeground": "#0ea5a8",
+    "list.hoverBackground": "#eef5f9",
+    "list.focusBackground": "#d7f1f2"
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "support.type.property-name.json",
+          "entity.name.tag.json"
+        ],
+        "settings": {
+          "foreground": "#0284c7"
+        }
+      },
+      {
+        "scope": [
+          "string.json"
+        ],
+        "settings": {
+          "foreground": "#059669"
+        }
+      },
+      {
+        "scope": [
+          "comment",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#2f8814",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "string",
+          "string.quoted",
+          "string.template"
+        ],
+        "settings": {
+          "foreground": "#059669"
+        }
+      },
+      {
+        "scope": [
+          "keyword",
+          "storage",
+          "storage.type"
+        ],
+        "settings": {
+          "foreground": "#2563eb"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type",
+          "support.type",
+          "entity.name.class",
+          "support.class"
+        ],
+        "settings": {
+          "foreground": "#0284c7"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#0ea5a8"
+        }
+      },
+      {
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.parameter"
+        ],
+        "settings": {
+          "foreground": "#18428b"
+        }
+      },
+      {
+        "scope": [
+          "constant",
+          "constant.language",
+          "constant.numeric"
+        ],
+        "settings": {
+          "foreground": "#0f766e"
+        }
+      },
+      {
+        "scope": [
+          "punctuation",
+          "meta.brace"
+        ],
+        "settings": {
+          "foreground": "#516b7a"
+        }
+      }
+    ]
+  },
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "property": "#1f2a33",
+      "propertyKey": "#1f2a33",
+
+      "type": "#0284c7",
+      "class": "#0284c7",
+      "interface": "#0284c7",
+      "enum": "#0284c7",
+
+      "function": "#0ea5a8",
+      "method": "#0ea5a8",
+
+      "variable": "#18428b",
+      "parameter": "#516b7a",
+      "property.readonly": "#1f2a33",
+
+      "keyword": "#2563eb",
+      "string": "#059669",
+      "number": "#0f766e"
+    }
+  }
+}

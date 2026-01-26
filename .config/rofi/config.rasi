@@ -1,4 +1,4 @@
-@theme "dracula"
+@theme "current-theme"
 
 element-icon, element-text, scrollbar {
   cursor: pointer;

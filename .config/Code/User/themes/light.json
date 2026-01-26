@@ -1,0 +1,187 @@
+{
+  "workbench.colorTheme": "light-simple",
+
+  "editor.semanticHighlighting.enabled": true,
+
+  "workbench.colorCustomizations": {
+    "breadcrumb.foreground": "#4a4f55",
+    "editor.background": "#f5f7fa",
+    "editor.foreground": "#2b2f36",
+    "editorCursor.foreground": "#3b82f6",
+
+    "editor.selectionBackground": "#dbeafe",
+    "editor.inactiveSelectionBackground": "#e8effa",
+    "editor.lineHighlightBackground": "#eef2f7",
+
+    "editor.wordHighlightBackground": "#dbeafe",
+    "editor.wordHighlightStrongBackground": "#c7ddff",
+
+    "editorLineNumber.foreground": "#9aa1ab",
+    "editorLineNumber.activeForeground": "#3b82f6",
+
+    "activityBar.background": "#eef2f7",
+    "activityBar.foreground": "#2b2f36",
+    "activityBarBadge.background": "#3b82f6",
+    "activityBarBadge.foreground": "#ffffff",
+
+    "sideBar.background": "#eef2f7",
+    "sideBar.foreground": "#3a3f45",
+    "sideBarSectionHeader.background": "#f5f7fa",
+    "sideBarSectionHeader.foreground": "#3b82f6",
+
+    "statusBar.background": "#eef2f7",
+    "statusBar.foreground": "#3a3f45",
+    "statusBar.noFolderBackground": "#eef2f7",
+    "statusBar.debuggingBackground": "#60a5fa",
+
+    "titleBar.activeBackground": "#eef2f7",
+    "titleBar.activeForeground": "#2b2f36",
+    "titleBar.inactiveBackground": "#e5e9f0",
+    "titleBar.inactiveForeground": "#7a818c",
+
+    "panel.background": "#eef2f7",
+    "panel.border": "#d6dbe3",
+    "panelTitle.activeForeground": "#3b82f6",
+    "panelTitle.inactiveForeground": "#7a818c",
+
+    "tab.activeBackground": "#f5f7fa",
+    "tab.activeForeground": "#2b2f36",
+    "tab.inactiveBackground": "#e5e9f0",
+    "tab.inactiveForeground": "#4a4f55",
+    "tab.border": "#d6dbe3",
+
+    "input.background": "#ffffff",
+    "input.foreground": "#2b2f36",
+    "input.border": "#d6dbe3",
+
+    "list.activeSelectionBackground": "#dbeafe",
+    "list.activeSelectionForeground": "#3b82f6",
+    "list.hoverBackground": "#eef2f7",
+    "list.focusBackground": "#dbeafe"
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "support.type.property-name.json",
+          "entity.name.tag.json"
+        ],
+        "settings": {
+          "foreground": "#3b82f6"
+        }
+      },
+      {
+        "scope": [
+          "string.json"
+        ],
+        "settings": {
+          "foreground": "#16a34a"
+        }
+      },
+      {
+        "scope": [
+          "comment",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#2f8814",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "string",
+          "string.quoted",
+          "string.template"
+        ],
+        "settings": {
+          "foreground": "#16a34a"
+        }
+      },
+      {
+        "scope": [
+          "keyword",
+          "storage",
+          "storage.type"
+        ],
+        "settings": {
+          "foreground": "#9333ea"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type",
+          "support.type",
+          "entity.name.class",
+          "support.class"
+        ],
+        "settings": {
+          "foreground": "#2563eb"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#0284c7"
+        }
+      },
+      {
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.parameter"
+        ],
+        "settings": {
+          "foreground": "#18428b"
+        }
+      },
+      {
+        "scope": [
+          "constant",
+          "constant.language",
+          "constant.numeric"
+        ],
+        "settings": {
+          "foreground": "#b45309"
+        }
+      },
+      {
+        "scope": [
+          "punctuation",
+          "meta.brace"
+        ],
+        "settings": {
+          "foreground": "#5c6470"
+        }
+      }
+    ]
+  },
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "property": "#2b2f36",
+      "propertyKey": "#2b2f36",
+
+      "type": "#2563eb",
+      "class": "#2563eb",
+      "interface": "#2563eb",
+      "enum": "#2563eb",
+
+      "function": "#0284c7",
+      "method": "#0284c7",
+
+      "variable": "#18428b",
+      "parameter": "#5c6470",
+      "property.readonly": "#2b2f36",
+
+      "keyword": "#9333ea",
+      "string": "#16a34a",
+      "number": "#b45309"
+    }
+  }
+}

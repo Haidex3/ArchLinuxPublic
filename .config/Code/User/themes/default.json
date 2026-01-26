@@ -1,0 +1,16 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+
+  "editor.semanticHighlighting.enabled": true,
+
+  "workbench.colorCustomizations": {},
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {}
+  }
+}

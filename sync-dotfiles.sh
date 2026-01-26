@@ -27,6 +27,12 @@ HATHEME_STATE_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/.local/state/hathem
 SCRIPTS_SOURCE="$HOME/scripts"
 SCRIPTS_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/scripts"
 
+# VS Code
+VSCODE_USER_SOURCE="$HOME/.config/Code/User"
+VSCODE_USER_TARGET="$HOME/Documents/GitHub/ArchLinuxPublic/.config/Code/User"
+
+
+
 # Carpetas a sincronizar desde ~/.config
 DIRS=(
     alacritty
@@ -131,5 +137,32 @@ if [ -d "$SCRIPTS_SOURCE" ]; then
 else
     echo "⚠️  No existe ~/scripts"
 fi
+
+# =========================
+# Sync VS Code themes
+# =========================
+if [ -d "$VSCODE_USER_SOURCE/themes" ]; then
+    echo "➡️  Sync VS Code themes"
+    mkdir -p "$VSCODE_USER_TARGET/themes"
+    rsync -av --delete \
+        --exclude='.git/' \
+        --exclude='*.log' \
+        "$VSCODE_USER_SOURCE/themes/" "$VSCODE_USER_TARGET/themes/"
+else
+    echo "⚠️  No existe ~/.config/code/user/themes"
+fi
+
+
+# =========================
+# Sync VS Code settings.json
+# =========================
+if [ -f "$VSCODE_USER_SOURCE/settings.json" ]; then
+    echo "➡️  Sync VS Code settings.json"
+    mkdir -p "$VSCODE_USER_TARGET"
+    rsync -av "$VSCODE_USER_SOURCE/settings.json" "$VSCODE_USER_TARGET/settings.json"
+else
+    echo "⚠️  No existe ~/.config/code/user/settings.json"
+fi
+
 
 echo "✅ Sincronización completa"
