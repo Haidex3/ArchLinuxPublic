@@ -15,48 +15,62 @@ Scope {
 
     function updateBrightness() {
         getProc.command = ["/bin/bash", "-c",
-            "/home/Haider/scripts/brightness-ddc.sh get"]
+            "current=$(brightnessctl g); max=$(brightnessctl m); echo $(( current * 100 / max ))"]
         getProc.running = true
     }
 
     function setBrightness(value) {
-        root.brightness = value // actualización inmediata
+        value = Math.max(0, Math.min(100, value))
+        root.brightness = value
 
-        setProc.command = ["/bin/bash", "-c",
-            "/home/Haider/scripts/brightness-ddc.sh set " + value]
+        setProc.command = ["/bin/bash", "-c", "brightnessctl s " + value + "%"]
         setProc.running = true
     }
 
     Process {
         id: getProc
+        running: false
+        command: []
+
+        stdout: SplitParser {
+            onRead: function(data) {
+                const parsed = parseInt(data.trim())
+                if (!isNaN(parsed))
+                    root.brightness = parsed
+            }
+        }
 
         onExited: function(exitCode) {
             if (exitCode !== 0)
-                return
-
-            const output = getProc.readAllStandardOutput().trim()
-            const parsed = parseInt(output)
-
-            if (!isNaN(parsed))
-                root.brightness = parsed
+                log("Error leyendo brillo")
         }
     }
 
     Process {
         id: setProc
+        running: false
+        command: []
+
+        stdout: SplitParser {
+            onRead: function(data) {
+                const parsed = parseInt(data.trim())
+                if (!isNaN(parsed))
+                    root.brightness = parsed
+            }
+        }
 
         onExited: function(exitCode) {
             if (exitCode !== 0) {
-                updateBrightness()
-                return
+                root.updateBrightness()
             }
-
-            const output = setProc.readAllStandardOutput().trim()
-            const parsed = parseInt(output)
-
-            if (!isNaN(parsed))
-                root.brightness = parsed
         }
+    }
+
+    property Timer _pollTimer: Timer {
+        interval: 500
+        running: true
+        repeat: true
+        onTriggered: root.updateBrightness()
     }
 
     Component.onCompleted: updateBrightness()

@@ -63,7 +63,7 @@ inputbar {
     padding: 8px;
     border-radius: 10px;
     border: 2px solid;
-    border-color: @blue;
+    border-color: @fg1;
     background-color: transparent;
     children: [ "prompt" ];
 }
@@ -82,7 +82,7 @@ message {
     padding: 10px;
     border-radius: 10px;
     border: 2px solid;
-    border-color: @orange;
+    border-color: @fg1;
     background-color: transparent;
     text-color: @fg0;
 }
@@ -101,7 +101,7 @@ error-message {
     padding: 12px;
     border: 0px;
     background-color: @bg1;
-    text-color: @red;
+    text-color: @fg1;
 }
 
 /*------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ element {
     padding: 14px 10px;
     border-radius: 10px;
     border: 2px solid;
-    border-color: @cyan;
+    border-color: @fg1;
     background-color: @bg1;
     text-color: @fg0;
     cursor: pointer;
@@ -142,7 +142,7 @@ element-text {
 }
 
 element selected.normal {
-    border-color: @red;
-    text-color: @red;
+    border-color: @fg2;
+    text-color: @fg2;
     background-color: @bg2;
 }

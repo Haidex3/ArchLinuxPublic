@@ -1,14 +1,13 @@
 [colors.normal]
-black   = "#0B0612"
-green   = "#D946EF"
-yellow  = "#22D3EE"
-blue    = "#22D3EE"
+black = "#0B0612"
+green = "#D946EF"
+yellow = "#22D3EE"
+blue = "#22D3EE"
 
 [colors.primary]
 foreground = "#D946EF"
 background = "#0B0612"
 
 [colors.bright]
-white   = "#D946EF"
-black   = "#5B1175"
-
+white = "#D946EF"
+black = "#5B1175"

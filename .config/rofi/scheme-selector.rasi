@@ -1,9 +1,10 @@
 /*-------------------------------------------------------------------------------
  *                                                                                
- *       ____  ____  ____  ____  ____  ____   ____ 
- *      ||R ||||O ||||F ||||I ||||   ||||   |||| 
- *      ||__||||__||||__||||__||||__||||__||||__|
- *      |/__\||/__\||/__\||/__\||/__\||/__\||/__\|
+ *        _    ____   ____ _   _ ___ ____  _____ ____  
+ *       / \  |  _ \ / ___| | | |_ _|  _ \| ____|  _ \ 
+ *      / _ \ | |_) | |   | |_| || || | | |  _| | |_) |
+ *     / ___ \|  _ <| |___|  _  || || |_| | |___|  _ < 
+ *    /_/   \_\_| \_\\____|_| |_|___|____/|_____|_| \_\
  *
  *            .--. 
  *           |o_o |       RESUME: Rofi config for scheme selector
@@ -121,11 +122,12 @@ mainbox {
  *  Elements (apps/icons)
 -------------------------------------------------------------------------------*/
 element {
-    background-color: transparent;
+    background-color: @secondary;
     text-color:       @foreground;
     orientation:      vertical;
+    children: [ element-icon, element-text ];
     border-radius:    5px;
-    padding:          0% 1% 0% 1%;
+    padding:          0% 0% 0% 0%;
 }
 
 element-icon {
@@ -135,7 +137,6 @@ element-icon {
 }
 
 element-text {
-    expand:           false;
     horizontal-align: 0.5;
     vertical-align:   0.5;
     margin:           4px 6px 0px 6px;

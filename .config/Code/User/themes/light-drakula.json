@@ -4,9 +4,9 @@
   "editor.semanticHighlighting.enabled": true,
 
   "workbench.colorCustomizations": {
-    "breadcrumb.foreground": "#2B2B3C",
+    "breadcrumb.foreground": "#BD93F9",
     "editor.background": "#F6F6FB",
-    "editor.foreground": "#2B2B3C",
+    "editor.foreground": "#BD93F9",
     "editorCursor.foreground": "#BD93F9",
 
     "editor.selectionBackground": "#E6DCFF",
@@ -20,7 +20,7 @@
     "editorLineNumber.activeForeground": "#BD93F9",
 
     "activityBar.background": "#F6F6FB",
-    "activityBar.foreground": "#2B2B3C",
+    "activityBar.foreground": "#BD93F9",
     "activityBarBadge.background": "#FF79C6",
     "activityBarBadge.foreground": "#FFFFFF",
 
@@ -30,12 +30,12 @@
     "sideBarSectionHeader.foreground": "#BD93F9",
 
     "statusBar.background": "#F6F6FB",
-    "statusBar.foreground": "#2B2B3C",
+    "statusBar.foreground": "#BD93F9",
     "statusBar.noFolderBackground": "#F6F6FB",
     "statusBar.debuggingBackground": "#FF79C6",
 
     "titleBar.activeBackground": "#F6F6FB",
-    "titleBar.activeForeground": "#2B2B3C",
+    "titleBar.activeForeground": "#BD93F9",
     "titleBar.inactiveBackground": "#EEEFF6",
     "titleBar.inactiveForeground": "#9A9AB0",
 
@@ -45,13 +45,13 @@
     "panelTitle.inactiveForeground": "#9A9AB0",
 
     "tab.activeBackground": "#F6F6FB",
-    "tab.activeForeground": "#2B2B3C",
+    "tab.activeForeground": "#BD93F9",
     "tab.inactiveBackground": "#F1F1FA",
     "tab.inactiveForeground": "#5F637A",
     "tab.border": "#DDDDEA",
 
     "input.background": "#FFFFFF",
-    "input.foreground": "#2B2B3C",
+    "input.foreground": "#BD93F9",
     "input.border": "#DDDDEA",
 
     "list.activeSelectionBackground": "#E6DCFF",
@@ -70,7 +70,7 @@
           "entity.name.tag.json"
         ],
         "settings": {
-          "foreground": "#2B2B3C"
+          "foreground": "#BD93F9"
         }
       },
       {
@@ -184,8 +184,8 @@
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
-      "property": "#2B2B3C",
-      "propertyKey": "#2B2B3C",
+      "property": "#BD93F9",
+      "propertyKey": "#BD93F9",
 
       "type": "#FF79C6",
       "class": "#FF79C6",
@@ -198,7 +198,7 @@
       "variable": "#18428b",
       "parameter": "#5F637A",
 
-      "property.readonly": "#2B2B3C",
+      "property.readonly": "#BD93F9",
 
       "keyword": "#BD93F9",
       "string": "#18428b",

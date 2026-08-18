@@ -8,7 +8,7 @@ pavucontrol &
 PAVU_PID=$!
 
 # Esperar a que Hyprland mapee la ventana
-sleep 0.5
+sleep 2
 
 # Loop de enfoque: cerrar al perder foco
 while true; do

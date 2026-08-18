@@ -5,3 +5,15 @@
         --wallpaper-current: url("images/dark-neon.png");
     }
 }
+
+::selection,
+::-moz-selection,
+*::selection,
+*::-moz-selection,
+html ::selection,
+html ::-moz-selection,
+body ::selection,
+body ::-moz-selection {
+    background: #D946EF !important;
+    color: #0B0612 !important;
+}

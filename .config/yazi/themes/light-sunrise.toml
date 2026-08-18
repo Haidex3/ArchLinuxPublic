@@ -170,12 +170,12 @@ rules = [
   { mime = "inode/empty", fg = "#A89C94" },
 
   # Special files
-  { name = "*", is = "orphan", bg = "#FFDAD6" },
-  { name = "*", is = "exec", fg = "#7FB069", bold = true },
+  { url = "*", is = "orphan", bg = "#FFDAD6" },
+  { url = "*", is = "exec", fg = "#7FB069", bold = true },
 
   # Dummy files
-  { name = "*", is = "dummy", bg = "#FFDAD6" },
-  { name = "*/", is = "dummy", bg = "#FFDAD6" },
+  { url = "*", is = "dummy", bg = "#FFDAD6" },
+  { url = "*/", is = "dummy", bg = "#FFDAD6" },
 
   # Folders fallback (🧡 sunrise)
   { url = "*/", fg = "#FF9E64", bold = true },

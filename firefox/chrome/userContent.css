@@ -6,7 +6,6 @@
         --uc-accent: rgb(237, 221, 170);
         --uc-accent-orange: rgb(228, 127, 45);
         --newtab-background-color: var(--bg-base) !important;
-        --tx-dark1: var(--c-text);
     }
 
     * {
@@ -23,16 +22,12 @@
         width: 100% !important;
         height: 100vh !important;
         overflow: hidden !important;
-        background:
-        color-mix(in srgb, var(--bg-base) 80%, transparent)
-        var(--wallpaper-dark1, none) !important;
         background: color-mix(in srgb, #2b2a33 30%, transparent) var(--wallpaper-current) !important;
         background-image: var(--wallpaper-current) !important;
         background-size: cover !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-attachment: fixed !important;
-        
     }
 
     body:not([class*="Wallpaper"])::before {
@@ -78,9 +73,7 @@
         border-radius: var(--giant-rounding, 20px);
         align-self: center !important;
     }
-
+}
     .wallpaper-attribution {
         display: none !important;
     }
-    
-}

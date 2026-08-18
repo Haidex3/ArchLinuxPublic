@@ -1,5 +1,4 @@
 pragma Singleton
-
 import Quickshell
 import Quickshell.Services.Mpris
 import QtQml
@@ -8,13 +7,9 @@ import Quickshell.Io
 Singleton {
     id: root
 
-    // =========================
-    // PROPIEDADES
-    // =========================
     readonly property list<MprisPlayer> list: Mpris.players.values
     readonly property MprisPlayer active: list[0] ?? null
 
-    // Reproducción / Progreso
     property int position: active?.position ?? 0
     property int length: active?.length ?? 0
     property bool isPlaying: active?.isPlaying ?? false
@@ -35,9 +30,6 @@ Singleton {
         }
     }
 
-    // =========================
-    // FUNCIONES DE CONTROL
-    // =========================
     function play() { 
         if (!active) return
         if (active.canPlay) {
@@ -57,17 +49,16 @@ Singleton {
     }
 
     function playPause() { 
-            if (active.isPlaying) {
-                active.pause()
-                root.isPlaying = false
-                if (progressTimer.running) progressTimer.stop()
-            } else {
-                active.play()
-                root.isPlaying = true
-                if (!progressTimer.running) progressTimer.start()
-            }
+        if (active.isPlaying) {
+            active.pause()
+            root.isPlaying = false
+            if (progressTimer.running) progressTimer.stop()
+        } else {
+            active.play()
+            root.isPlaying = true
+            if (!progressTimer.running) progressTimer.start()
         }
-
+    }
 
     function previous() { if (active?.canGoPrevious) active.previous() }
     function next() { if (active?.canGoNext) active.next() }
@@ -79,9 +70,6 @@ Singleton {
         root.isPlaying = false
     }
 
-    // =========================
-    // FUNCIONES DE SCRUBBING
-    // =========================
     function setPosition(ms) {
         if (active?.canSeek) {
             active.position = ms
@@ -89,9 +77,6 @@ Singleton {
         }
     }
 
-    // =========================
-    // FUNCIONES DE INFORMACIÓN
-    // =========================
     function getTrackTitle() { return active?.trackTitle ?? "No track playing" }
     function getTrackArtist() { return active?.trackArtist ?? "Unknown artist" }
     function getTrackArt() { return active?.trackArtUrl ?? "" }
@@ -101,26 +86,23 @@ Singleton {
     }
     function listPlayers() { return list.map(p => p.identity).join("\n") }
 
-    // =========================
-    // CONEXIONES
-    // =========================
     Connections {
         target: active
+        
         function onPostTrackChanged() {
-            if (active?.trackArtist && active?.trackTitle)
-                console.log("Now playing: " + getTrackInfo())
-            if (active?.trackArtUrl)
-                console.log("Track art URL: " + active.trackArtUrl)
         }
 
-        function onSeeked() {
+        function onPositionChanged() {
             root.position = active.position
+        }
+        
+        function onPlaybackStateChanged() {
+            if (active) {
+                root.isPlaying = active.isPlaying
+            }
         }
     }
 
-    // =========================
-    // IPC PARA CONTROL REMOTO
-    // =========================
     IpcHandler {
         target: "mpris"
 

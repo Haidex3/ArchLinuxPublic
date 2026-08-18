@@ -49,24 +49,7 @@ Item {
                 font.pixelSize: Theme.ThemeManager.baseFontSize
             }
         }
-        
-        // GPU Temperature
-        RowLayout {
-            spacing: 4
-            
-            Text {
-                text: "󰾲"
-                color: root.getTempColor(Services.TemperatureService.gpuTemp)
-                font.pixelSize: Theme.ThemeManager.titleFontSize
-                font.family: "Symbols Nerd Font"
-            }
-            
-            Text {
-                text: `${Math.round(Services.TemperatureService.gpuTemp)}°`
-                color: root.getTempColor(Services.TemperatureService.gpuTemp)
-                font.pixelSize: Theme.ThemeManager.baseFontSize
-            }
-        }
+
     }
 
     // Animation to toogle

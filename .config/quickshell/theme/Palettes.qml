@@ -29,7 +29,7 @@ QtObject {
             base: "#F8E6EE",
             surface: "#E8CFDA",
             text: "#C06A78",
-            color1: "#6B78E6",
+            color1: "#FFF0F6",
             color2: "#2E8F59",
             color3: "#B8892F",
             color4: "#B3264A",

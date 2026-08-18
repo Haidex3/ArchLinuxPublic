@@ -1,52 +1,57 @@
 #!/usr/bin/env bash
 
 # ----------------------------
-# Rutas
+# Paths
 # ----------------------------
+SELECTED="$1"
 COLOR_FILE="$HOME/.local/state/hatheme/scheme/colors.txt"
 
-# Alacritty
 ALACRITTY_CONFIG="$HOME/.config/alacritty/colors.toml"
 ALACRITTY_NMTUI_CONFIG="$HOME/.config/alacritty/nmtui.toml"
 ALACRITTY_BLUETUI_CONFIG="$HOME/.config/alacritty/bluetui.toml"
 
-# Kitty
-KITTY_CONFIG="$HOME/.config/kitty/kitty.conf"
+FIREFOX_PROFILE="$HOME/.mozilla/firefox/wq4xww1n.default-release"
+CHROME_DIR="$FIREFOX_PROFILE/chrome"
+HATHEME_CSS="$CHROME_DIR/hatheme-state.css"
 
-# Hyprland
+KITTY_CONFIG="$HOME/.config/kitty/kitty.conf"
 HYPR_COLORS="$HOME/.config/hypr/myColors.conf"
 
 # ----------------------------
-# Leer colores del archivo maestro
+# Load colors once
 # ----------------------------
-get_color() {
-    grep "^$1" "$COLOR_FILE" | awk '{print "#"$2}'
-}
+declare -A COLORS
 
-# Convierte #RRGGBB → rgba(RRGGBBff)
-to_rgba() {
-    echo "rgba(${1#"#"}ff)"
-}
+while read -r key value _; do
+    [[ -z "$key" || "$key" == \#* ]] && continue
+    COLORS["$key"]="#$value"
+done < "$COLOR_FILE"
 
-primary=$(get_color "primary_paletteKeyColor")
-secondary=$(get_color "secondary_paletteKeyColor")
-background=$(get_color "background")
-foreground=$(get_color "onBackground")
-cursor=$(get_color "primary")
-success=$(get_color "success")
-error=$(get_color "error")
-warning=$(get_color "yellow")
-info=$(get_color "blue")
-primaryContainer=$(get_color "primaryContainer")
+primary="${COLORS[primary_paletteKeyColor]}"
+secondary="${COLORS[secondary_paletteKeyColor]}"
+background="${COLORS[background]}"
+foreground="${COLORS[onBackground]}"
+cursor="${COLORS[primary]}"
+success="${COLORS[success]}"
+error="${COLORS[error]}"
+warning="${COLORS[yellow]}"
+info="${COLORS[blue]}"
+primaryContainer="${COLORS[primaryContainer]}"
 
-# Colores para Hyprland
-active_border=$(to_rgba "$primary")
+active_border="rgba(${primary#\#}ff)"
 
 # ----------------------------
-# Generar Alacritty config
+# Ensure directories exist
 # ----------------------------
-mkdir -p "$(dirname "$ALACRITTY_CONFIG")"
+mkdir -p \
+    "$(dirname "$ALACRITTY_CONFIG")" \
+    "$(dirname "$KITTY_CONFIG")" \
+    "$(dirname "$HYPR_COLORS")" \
+    "$CHROME_DIR"
 
+# ----------------------------
+# Alacritty
+# ----------------------------
 cat > "$ALACRITTY_CONFIG" <<EOF
 [colors]
 
@@ -55,48 +60,39 @@ background = "$background"
 foreground = "$foreground"
 EOF
 
-
 # ----------------------------
-# Generar Alacritty config para nmtui
+# nmtui
 # ----------------------------
-mkdir -p "$(dirname "$ALACRITTY_NMTUI_CONFIG")"
-
 cat > "$ALACRITTY_NMTUI_CONFIG" <<EOF
 [colors.normal]
 black = "$primary"
 red = "$secondary"
 blue = "$background"
 white = "$background"
-
 EOF
 
 # ----------------------------
-# Generar Alacritty config para bluetui
+# bluetui
 # ----------------------------
-mkdir -p "$(dirname "$ALACRITTY_BLUETUI_CONFIG")"
-
 cat > "$ALACRITTY_BLUETUI_CONFIG" <<EOF
 [colors.normal]
-black   = "$background"
-green   = "$primary"
-yellow  = "$secondary"
-blue    = "$secondary"
+black = "$background"
+green = "$primary"
+yellow = "$secondary"
+blue = "$secondary"
 
 [colors.primary]
 foreground = "$primary"
 background = "$background"
 
 [colors.bright]
-white   = "$primary"
-black   = "$primaryContainer"
-
+white = "$primary"
+black = "$primaryContainer"
 EOF
 
 # ----------------------------
-# Generar Kitty config
+# Kitty
 # ----------------------------
-mkdir -p "$(dirname "$KITTY_CONFIG")"
-
 cat > "$KITTY_CONFIG" <<EOF
 background $background
 foreground $foreground
@@ -112,27 +108,38 @@ color7 $foreground
 EOF
 
 # ----------------------------
-# Generar Hyprland colors
+# Hyprland
 # ----------------------------
-mkdir -p "$(dirname "$HYPR_COLORS")"
-
 cat > "$HYPR_COLORS" <<EOF
-# ===============================================================================
-# myColors.conf
-#
-# DESCRIPTION:
-#   Custom color configuration for Hyprland.
-#   Defines general colors such as active window borders.
-# ===============================================================================
-
-# -------------------------------------------------
-# General Colors
-# -------------------------------------------------
 general {
     col.active_border = $active_border
 }
 EOF
 
-echo "Tema aplicado desde $COLOR_FILE a todas las apps compatibles."
+# ----------------------------
+# Firefox
+# ----------------------------
+cat > "$HATHEME_CSS" <<EOF
+/* Auto-generated – DO NOT EDIT */
+@-moz-document url("about:home"), url("about:newtab") {
+    :root {
+        --hatheme-theme: $SELECTED;
+        --wallpaper-current: url("images/${SELECTED}.png");
+    }
+}
 
+::selection,
+::-moz-selection,
+*::selection,
+*::-moz-selection,
+html ::selection,
+html ::-moz-selection,
+body ::selection,
+body ::-moz-selection {
+    background: $primary !important;
+    color: $background !important;
+}
+EOF
+
+scripts/scheme/set-wallpaper.sh "$SELECTED"
 hyprctl reload

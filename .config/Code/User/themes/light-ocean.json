@@ -70,7 +70,7 @@
           "entity.name.tag.json"
         ],
         "settings": {
-          "foreground": "#0284c7"
+          "foreground": "#4FB6C6"
         }
       },
       {
@@ -119,7 +119,7 @@
           "support.class"
         ],
         "settings": {
-          "foreground": "#0284c7"
+          "foreground": "#4FB6C6"
         }
       },
       {
@@ -188,10 +188,10 @@
       "property": "#1f2a33",
       "propertyKey": "#1f2a33",
 
-      "type": "#0284c7",
-      "class": "#0284c7",
-      "interface": "#0284c7",
-      "enum": "#0284c7",
+      "type": "#4FB6C6",
+      "class": "#4FB6C6",
+      "interface": "#4FB6C6",
+      "enum": "#4FB6C6",
 
       "function": "#0ea5a8",
       "method": "#0ea5a8",

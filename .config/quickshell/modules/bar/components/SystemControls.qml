@@ -153,6 +153,10 @@ Item {
                 anchors.fill: parent
             }
         }
+
+        Battery {
+                        id: batteryWidget
+                    }
     }
 
     // ==========================

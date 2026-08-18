@@ -30,19 +30,12 @@ PanelWindow {
         bottom: true
     }
 
-    // =========================
-    // FONDO CLICK-TO-CLOSE
-    // =========================
     MouseArea {
         anchors.fill: parent
         enabled: open
         onClicked: mediaPanel.requestClose()
     }
 
-
-    // =========================
-    // PANEL
-    // =========================
     Rectangle {
         id: panelBox
 
@@ -74,16 +67,12 @@ PanelWindow {
             anchors.margins: 20
             spacing: 20
 
-            // =========================
-            // IZQUIERDA: Carátula + CAVA
-            // =========================
             Item {
                 id: albumCoverWrapper
                 width: 160
                 height: 160
                 Layout.alignment: Qt.AlignVCenter
 
-                // Imagen de portada centrada
                 StyledClippingRect {
                     anchors.fill: parent
                     color: Theme.ThemeManager.color3
@@ -106,11 +95,6 @@ PanelWindow {
                 }
             }
 
-
-
-            // =========================
-            // CENTRO: Título, artista, barra y botones
-            // =========================
             ColumnLayout {
                 spacing: 12
                 Layout.fillWidth: true
@@ -141,16 +125,12 @@ PanelWindow {
                     Layout.fillWidth: true
                     horizontalAlignment: Text.AlignHCenter
 
-
                     Connections {
                         target: Players.active
                         function onPostTrackChanged() { trackArtist.text = Players.getTrackArtist() + (Players.active?.album ? " - " + Players.active.album : "") }
                     }
                 }
 
-                // =========================
-                // Barra de progreso
-                // =========================
                 Rectangle {
                     id: progressContainer
                     height: 6
@@ -195,15 +175,11 @@ PanelWindow {
                     }
                 }
 
-                // =========================
-                // Botones de control
-                // =========================
                 RowLayout {
                     spacing: 16
                     Layout.alignment: Qt.AlignHCenter
                     Layout.topMargin: 8
 
-                    // Botón anterior
                     Rectangle {
                         width: 36; height: 36
                         radius: 18
@@ -227,7 +203,6 @@ PanelWindow {
                         }
                     }
 
-                    // Botón play/pause
                     Rectangle {
                         id: playPauseButton
                         width: 48; height: 48
@@ -254,13 +229,12 @@ PanelWindow {
 
                         Connections {
                             target: Players
-                            onIsPlayingChanged: {
+                            function onIsPlayingChanged() {
                                 playPauseIcon.source = Players.isPlaying ? "../assets/icons/pause.svg" : "../assets/icons/play.svg"
                             }
                         }
                     }
 
-                    // Botón siguiente
                     Rectangle {
                         width: 36; height: 36
                         radius: 18
@@ -285,15 +259,11 @@ PanelWindow {
                     }
                 }
 
-
                 RowLayout {
                     spacing: 9
                     Layout.fillWidth: true
                     Layout.topMargin: 8
 
-                    // =========================
-                    // ICONO IZQUIERDA
-                    // =========================
                     Item {
                         Layout.preferredWidth: 15
                         Layout.preferredHeight: 20
@@ -323,17 +293,11 @@ PanelWindow {
                         }
                     }
 
-                    // =========================
-                    // SLIDER CENTRO
-                    // =========================
                     VolumeSlider {
                         Layout.alignment: Qt.AlignHCenter
                         Layout.fillWidth: true
                     }
 
-                    // =========================
-                    // PORCENTAJE DERECHA
-                    // =========================
                     Item {
                         Layout.preferredWidth: 25
                         Text {
@@ -345,12 +309,8 @@ PanelWindow {
                         }
                     }
                 }
-
             }
 
-            // =========================
-            // DERECHA: GIF animado
-            // =========================
             AnimatedImage {
                 Layout.preferredWidth: 160
                 Layout.preferredHeight: 160
@@ -362,7 +322,6 @@ PanelWindow {
                 fillMode: Image.PreserveAspectFit
                 asynchronous: true
             }
-
         }
     }
 }

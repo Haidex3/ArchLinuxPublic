@@ -141,6 +141,13 @@ PanelWindow {
 
                     Workspaces {}
                 }
+
+                RowLayout {
+                    id: power
+                    anchors.centerIn: parent
+
+                    PowerProfile {}
+                }
             }
 
             BarConnector {}
@@ -194,6 +201,12 @@ PanelWindow {
                         visible: tempToggle.expanded
                     }
 
+                    PowerProfile {
+                        id: powerProfile
+                        visible: tempToggle.expanded
+                    }
+
+
                     ToggleIndicator {
                         id: tempToggle
                         icon: "󰔏"
@@ -209,6 +222,7 @@ PanelWindow {
                     }
 
                     Item { Layout.preferredWidth: 4 }
+
                 }
             }
         }

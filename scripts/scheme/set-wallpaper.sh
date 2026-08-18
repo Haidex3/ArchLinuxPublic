@@ -1,37 +1,27 @@
 #!/usr/bin/env bash
 
-# =====================
-# Wallpaper handler
-# =====================
-
 IMG_DIR="$HOME/.local/share/hatheme/images"
 STATE_DIR="$HOME/.local/state/hatheme/scheme"
 
 if [[ -n "$1" ]]; then
     THEME="$1"
+elif [[ -f "$STATE_DIR/current-theme.txt" ]]; then
+    read -r THEME < "$STATE_DIR/current-theme.txt"
 else
-    if [[ -f "$STATE_DIR/current-theme.txt" ]]; then
-        THEME=$(cat "$STATE_DIR/current-theme.txt")
-    else
-        echo "No theme specified and no current-theme.txt found."
-        exit 1
-    fi
+    exit 1
 fi
 
 WALLPAPER="$IMG_DIR/$THEME.png"
 WALLPAPER_M2="$IMG_DIR/${THEME}-M2.png"
 
-mapfile -t MONITORS < <(hyprctl monitors -j | jq -r '.[].name')
+[[ -f "$WALLPAPER" ]] || exit 1
 
-if [[ ! -f "$WALLPAPER" ]]; then
-    echo "Wallpaper not found: $WALLPAPER"
-    exit 1
-fi
+mapfile -t MONITORS < <(
+    hyprctl monitors -j | jq -r '.[].name'
+)
 
-swww img "$WALLPAPER" --outputs "${MONITORS[0]}"
+awww img "$WALLPAPER" \
+    --outputs "${MONITORS[0]}" --transition-type none
 
-if [[ -n "${MONITORS[1]}" && -f "$WALLPAPER_M2" ]]; then
-    swww img "$WALLPAPER_M2" --outputs "${MONITORS[1]}"
-fi
-
-echo "Wallpaper for '$THEME' applied."
+[[ -n "${MONITORS[1]}" && -f "$WALLPAPER_M2" ]] &&
+    awww img "$WALLPAPER_M2" --outputs "${MONITORS[1]}" --transition-type none

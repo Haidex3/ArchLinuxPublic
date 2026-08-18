@@ -1,4 +1,25 @@
 {
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex",
+      "tools": [
+        "pdflatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "pdflatex",
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-17",
@@ -10,7 +31,11 @@
     },
     {
       "name": "JavaSE-25",
-      "path": "/usr/lib/jvm/java-25-openjdk",
+      "path": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/25"
+    },
+    {
+      "name": "JavaSE-26",
+      "path": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest",
       "default": true
     }
   ],
@@ -18,7 +43,7 @@
     "bash": {
       "path": "bash",
       "env": {
-        "JAVA_HOME": "/usr/lib/jvm/java-25-openjdk"
+        "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk"
       },
       "args": [
         "--rcfile",
@@ -50,7 +75,18 @@
     "JavaSE-25 LTS": {
       "overrideName": true,
       "env": {
-        "JAVA_HOME": "/usr/lib/jvm/java-25-openjdk"
+        "JAVA_HOME": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/25"
+      },
+      "path": "bash",
+      "args": [
+        "--rcfile",
+        "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+      ]
+    },
+    "JavaSE-26": {
+      "overrideName": true,
+      "env": {
+        "JAVA_HOME": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"
       },
       "path": "bash",
       "args": [
@@ -59,18 +95,71 @@
       ]
     }
   },
-  "terminal.integrated.defaultProfile.linux": "JavaSE-25 LTS",
+  "terminal.integrated.defaultProfile.linux": "JavaSE-21 LTS",
   "maven.terminal.customEnv": [
     {
       "environmentVariable": "JAVA_HOME",
-      "value": "/usr/lib/jvm/java-25-openjdk"
+      "value": "/usr/lib/jvm/java-21-openjdk"
     }
   ],
-  "java.import.gradle.java.home": "/usr/lib/jvm/java-25-openjdk",
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-21-openjdk",
+  "editor.semanticHighlighting.enabled": true,
+  "redhat.telemetry.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#00FF0010"
+    },
+    {
+      "column": 100,
+      "color": "#BDB76B15"
+    },
+    {
+      "column": 120,
+      "color": "#FA807219"
+    }
+  ],
+  "editor.unicodeHighlight.includeComments": true,
+  "workbench.editor.revealIfOpen": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.maxConcurrentBuilds": 8,
+  "java.sources.organizeImports.staticStarThreshold": 1,
+  "docker.extension.enableComposeLanguageServer": false,
   "maven.executable.path": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/maven/latest/bin/mvn",
   "java.import.gradle.home": "/home/Haider/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/gradle/latest",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.semanticHighlighting.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "java.configuration.detectJdksAtStart": false,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/.docx.json"
+      ],
+      "url": "https://raw.githubusercontent.com/Mehdi-Verfaillie/docx/main/src/config/.docx.schema.json"
+    }
+  ],
+  "editor.fontFamily": "Adwaita Mono",
+  "editor.fontSize": 12,
+  "terminal.integrated.fontFamily": "Adwaita Mono",
+  "terminal.integrated.fontSize": 12,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
   "workbench.colorTheme": "dark-neon",
   "workbench.colorCustomizations": {
     "breadcrumb.foreground": "#b9b3d6",

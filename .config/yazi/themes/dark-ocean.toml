@@ -156,9 +156,9 @@ rules = [
   { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd}", fg = "#f472b6" },
   { mime = "application/{pdf,doc,rtf}", fg = "#7fd6e8" },
   { mime = "inode/empty", fg = "#8b8fa3" },
-  { name = "*", is = "orphan", bg = "#f472b6" },
-  { name = "*", is = "exec", fg = "#4ade80", bold = true },
-  { name = "*", is = "dummy", bg = "#f472b6" },
-  { name = "*/", is = "dummy", bg = "#f472b6" },
+  { url = "*", is = "orphan", bg = "#f472b6" },
+  { url = "*", is = "exec", fg = "#4ade80", bold = true },
+  { url = "*", is = "dummy", bg = "#f472b6" },
+  { url = "*/", is = "dummy", bg = "#f472b6" },
   { url = "*/", fg = "#d946ef", bold = true },
 ]
